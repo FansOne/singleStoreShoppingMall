@@ -1,0 +1,128 @@
+{
+	"description": "A WePY project",
+	"setting": {
+		"urlCheck": true,
+		"es6": false,
+		"postcss": false,
+		"minified": false,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"appid": "wx7702051e538852be",
+	"projectname": "%E9%97%A8%E5%BA%97%E7%94%B5%E5%95%86JAVA",
+	"miniprogramRoot": "dist/",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 14,
+			"list": [
+				{
+					"id": -1,
+					"name": "开发票",
+					"pathName": "pages/index/deliver/billList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单完成",
+					"pathName": "pages/index/deliver/orderDone",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "外卖首页",
+					"pathName": "pages/index/takeOut/deliver",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": " 我的订单",
+					"pathName": "pages/index/takeOut/order",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "地址列表",
+					"pathName": "pages/index/takeOut/addressList",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "添加地址",
+					"pathName": "pages/index/takeOut/addAddress",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "退款原因",
+					"pathName": "pages/mall/mall",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单",
+					"pathName": "pages/index/orderList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "电商支付成功",
+					"pathName": "pages/index/shoppingMall/paymentSuccess",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/index/deliver/mine",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "点餐支付成功",
+					"pathName": "pages/index/deliver/paymentSuccess",
+					"query": "merchant_id=29"
+				},
+				{
+					"id": 11,
+					"name": "扫码领券",
+					"pathName": "pages/shareCpn",
+					"query": "uuid=c813e2c5fdf6",
+					"scene": "1013"
+				},
+				{
+					"id": -1,
+					"name": "点餐",
+					"pathName": "pages/index/deliver/deliver",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "买单",
+					"pathName": "pages/payMent",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "买单支付成功",
+					"pathName": "pages/payMentSuccess",
+					"scene": null
+				}
+			]
+		}
+	}
+}

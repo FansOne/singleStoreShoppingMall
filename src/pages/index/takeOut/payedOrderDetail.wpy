@@ -1,0 +1,1224 @@
+<style lang="less">
+  page{
+    width:100%;
+    height:100%;
+    background-color:#f3f3f3;
+  }
+  /*添加收货地址*/
+  #my-menu{
+    .order-list-wrap{
+      width:100%;
+      height:100%;
+      padding:20rpx;
+      box-sizing:border-box;
+    }
+  }
+  .sold-list-head{
+    width:100%;
+    height:80rpx;
+    /*background-color:cyan;*/
+    padding :0 20rpx;
+    box-sizing:border-box;
+    .image{
+      display:inline-block;
+      width:6rpx;
+      height:40rpx;
+      background-color:#ffd265;
+      margin-top:20rpx;
+      margin-right:20rpx;
+    }
+    view{
+      display:inline-block;
+      height:100%;
+      line-height:80rpx;
+      font-size:30rpx;
+      color:#333;
+      vertical-align: top;
+    }
+  }
+  .order-wrap-wrap{
+    width:100%;
+    height:auto;
+    background-color:#fff;
+    pdding-bottom:30rpx;
+    border-radius:6rpx;
+    box-sizing:border-box;
+  }
+  .user-info-model-wrap{
+    width:656rpx;
+    height:auto;
+    padding-left:40rpx;
+    box-sizing:border-box;
+  }
+  .order-wrap{
+    width:100%;
+    height:auto;
+    /*订单列表*/
+    .user-info-wrap{
+      width:656rpx;
+      height:auto;
+      .user-info{
+        width:100%;
+        height:80rpx;
+        background-color:#f3f3f3;
+        font-size:32rpx;
+        color:#333;
+        padding:0 7rpx;
+        box-sizing:border-box;
+        .user-profile{
+          display:inline-block;
+          width:70rpx;
+          height:70rpx;
+          background-color:red;
+          border-radius:50%;
+          margin-top:5rpx;
+          margin-right:30rpx;
+        }
+        .user-name{
+          display:inline-block;
+          height:100%;
+          vertical-align: top;
+          line-height:80rpx;
+        }
+        .food-num{
+          display:inline-block;
+          float:right;
+          vertical-align:top;
+          height:100%;
+          line-height:80rpx;
+        }
+      }
+      .foods-list{
+        width:100%;
+        height:140rpx;
+        /*background-color:green;*/
+        margin-top:40rpx;
+        .foods-pic{
+          display:inline-block;
+          width:140rpx;
+          height:140rpx;
+          /*background-color:aqua;*/
+        }
+        .foods-pic-desc{
+          float:right;
+          vertical-align: top;
+          width:475rpx;
+          height:100%;
+          /*background-color:yellow;*/
+          padding-right:7rpx;
+          box-sizing:border-box;
+          position:relative;
+          .foods-name{
+            height:36rpx;
+            view{
+              display:block;
+              font-size:32rpx;
+              color:#333;
+              float:left;
+            }
+            .price{
+              float:right;
+              color:#ff2323;
+            }
+          }
+          .num{
+            font-size:32rpx;
+            color:#969696;
+            text-align:left;
+            position:absolute;
+            bottom:0;
+            left:0;
+          }
+        }
+      }
+    }
+  }
+  .line{
+    width:670rpx;
+    height:2rpx;
+    margin:0 auto;
+    background-color:#f3f3f3;
+    margin-top:40rpx;
+  }
+  /*底部固定栏*/
+  .tab-wrap{
+    width:100%;
+    height:120rpx;
+    background-color:#fff;
+    position:fixed;
+    bottom:0;
+    left:0;
+    z-index:100;
+    .price{
+      width:50%;
+      height:100%;
+      display:inline-block;
+      padding-left:40rpx;
+      box-sizing:border-box;
+      text{
+        display:inline-block;
+        vertical-align: top;
+        height:100%;
+        line-height:120rpx;
+        color:#333;
+        font-size:34rpx;
+        font-weight:bold;
+      }
+    }
+  }
+
+  /*遮罩*/
+  .commodity_screen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    background:rgba(0,0,0,0.5);
+    overflow: hidden;
+    z-index: 1000;
+    color: #fff;
+    .sale{
+      width:500rpx;
+      height:auto;
+      border-radius:10rpx;
+      background-color:#fff;
+      position:absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      font-size:28rpx;
+      color:#333;
+      .activity{
+        width:100%;
+        height:98rpx;
+        background-color: #ffd265;
+        border-radius: 10rpx 10rpx 0rpx 0rpx;
+        font-size:32rpx;
+        color:#333;
+        padding:0 20rpx;
+        box-sizing:border-box;
+        line-height:98rpx;
+      }
+      .view{
+        width:100%;
+        height:33rpx;
+        margin-bottom:20rpx;
+        image{
+          display:inline-block;
+          width:33rpx;
+          height:100%;
+          margin-right:24rpx;
+        }
+        view{
+          vertical-align: top;
+          display:inline-block;
+
+        }
+      }
+      .viewlast-child{
+        margin-bottom:0;
+      }
+    }
+    .close{
+      width:24rpx;
+      height:24rpx;
+      background-color:red;
+      position:absolute;
+      top:20rpx;
+      right:20rpx;
+    }
+  }
+  .billing{
+    width:100%;
+    height:80rpx;
+    overflow:hidden;
+  }
+  .billing-active{
+    height:auto;
+  }
+
+  /*添加收货地址 update by lisa in 2018-4-46*/
+  .address-wrap{
+    width:720rpx;
+    height:295rpx;
+    background-color:#fff;
+    margin:20rpx auto 0;
+    overflow:hidden;
+    color:#333;
+    position:relative;
+    .order-cancle-word{
+      width:100%;
+      font-size:36rpx;
+      text-align:center;
+      margin-top:30rpx;
+    }
+    .order-cancle-reason{
+      width:100%;
+      font-size: 32rpx;
+      text-align:center;
+      margin-top:30rpx;
+    }
+    .update-order-btn{
+      width:100%;
+      height:70rpx;
+      text-align:center;
+      margin-top:36rpx;
+    }
+    .order-re-order{
+      display:inline-block;
+      width: 200rpx;
+      height: 70rpx;
+      background-color: #ffd265;
+      box-shadow: 0rpx 3rpx 9rpx 0rpx rgba(0, 0, 0, 0.1);
+      border-radius: 35rpx;
+      position:absolute;
+      bottom:42rpx;
+      left:0;
+      right:0;
+      margin:auto;
+      text-align:center;
+      line-height:70rpx;
+      font-size: 32rpx;
+    }
+  }
+  .order-re-order-2{
+      position:absolute;
+      bottom:42rpx;
+      left:0;
+      right:0;
+      margin:auto;
+      width: 200rpx;
+      height: 70rpx;
+      background-color: #ffd265;
+      box-shadow: 0rpx 3rpx 9rpx 0rpx rgba(0, 0, 0, 0.1);
+      border-radius: 35rpx;
+      text-align:center;
+      line-height:70rpx;
+      font-size: 32rpx;
+    }
+  .contact{
+    width: 710rpx;
+    height: 98rpx;
+    background-color: #ffd265;
+    box-shadow: -10rpx 3rpx 9rpx 0rpx rgba(0, 0, 0, 0.04);
+    border-radius: 0rpx 0rpx 6rpx 6rpx;
+    text-align:center;
+    font-size: 32rpx;
+    color:#333;
+    margin-top:20rpx;
+    image{
+      display:inline-block;
+      width:36rpx;
+      height:35rpx;
+      margin-right:30rpx;
+      margin-top:32rpx;
+    }
+  }
+  .update-rider-location{
+    width:auto;
+    height:60rpx;
+    border-radius:8rpx;
+    line-height:60rpx;
+    background-color:#ffd265;
+    position:absolute;
+    right:15rpx;
+    top:15rpx;
+    font-size:30rpx;
+    padding:0 20rpx;
+
+  }
+</style>
+<template>
+  <view id="my-menu" style="position:relative;">
+    <!--打开地图-->
+    <view style="position:relative;width:100%;height:{{height2}}px;display:{{mapShow}};">
+      <map id="map" polyline="{{polyline}}" markers="{{markers}}" include-points="{{markers}}" style="width: 100%;height:100%;"></map>
+      <!-- 刷新骑手位置 -->
+      <cover-view class="update-rider-location">刷新位置</cover-view>
+    </view>
+    <!--订单信息-->
+    <!-- <scroll-view scroll-y style="height:{{height}}px;display:flex;position:absolute;top:875rpx;left:0;"> -->
+      <view style="height:{{height}}px;position:absolute;top:875rpx;left:0;">
+        <!--支付成功 等待接单-->
+        <view class="address-wrap" id="address-wrap" @touchstart="scroll">
+          <view class="order-cancle-word">支付成功</view>
+          <view class="order-cancle-reason" style="display:{{shopNone}}"><text style="color:red;">{{wxTimerList[orderDoneData.serial].wxTimer}}</text>分钟商家未接单，将自动取消订单</view>
+          <view class="order-cancle-reason" style="display:{{shopShow}}">商家已接单</view>
+          <view class="update-order-btn">
+            <view class="order-re-order" @tap.stop="isCancleOrder" style="display:{{isCancleOrder}};">取消订单</view>
+            <view class="order-re-order" @tap.stop="confirmReceipt" style="display:{{confirmReceipt}};">确认收货</view>
+            <view class="order-re-order" @tap.stop="applyRefund" style="display:{{applyRefund}};">申请退款</view>
+          </view>
+      </view> 
+
+      <!-- 遮罩 -->
+      <!-- <view class="address-wrap" style="display:{{mask}};position:absolute;z-index:4555;top:20rpx;left:0;right:0;margin:auto;background:#000;background:rgba(0,0,0,0);" id="address-wrap-mask">
+        <view class="order-re-order-2" @tap.stop="isCancleOrder">取消订单</view>
+      </view> -->
+        <!--订单列表-->
+        <scroll-view scroll-y style="height:{{height2}}px;display:flex;">
+          <view class="order-list-wrap">
+             <!-- 配送人员的信息 -->
+            <view style="width:100%;margin-bottom:20rpx;height:auto;background-color:#fff;padding-bottom:26rpx;font-size:30rpx;border-radius:6rpx;box-sizing:border-box;">
+              <view class="sold-list-head">
+                <view class="image"></view>
+                <view style="font-weight:bold;">配送人员信息</view>
+                <view style="display:inline-block;margin-left:28rpx;color:#333;"></view>
+              </view>
+              <view style="margin:15rpx 0;padding-left:30rpx;">名字：{{riderName}}</view>
+              <view style="padding-left:30rpx;">手机：{{riderPhone}}</view>
+            </view>
+            <view style="width:100%;height:auto;background-color:#fff;pdding-bottom:30rpx;border-radius:6rpx;box-sizing:border-box;">
+              <!--一个人的订单-->
+              <view class="order-wrap">
+                <!--title-->
+                <view class="sold-list-head">
+                  <view class="image"></view>
+                  <view style="font-weight:bold;">订单商品</view>
+                </view>
+                <!--订单商品列表-->
+                <view style="width:656rpx;height:auto;padding-left:40rpx;box-sizing:border-box;">
+                  <view class="user-info-wrap">
+                    <!--点的餐食列表-->
+                    <view class="foods-list" wx:for="{{deliverData}}" wx:key="{{index}}" wx:for-item="item">
+                      <image class="foods-pic" src="{{item.cover}}"></image>
+                      <view class="foods-pic-desc">
+                        <view class="foods-name">
+                          <view>{{item.title}}</view>
+                          <view class="price">￥{{item.price/100}}</view>
+                        </view>
+                        <view class="num">x {{item.qty}}</view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+
+                <!--包装费-->
+                <view class="sold-list-head">
+                  <view class="image"></view>
+                  <view style="font-weight:bold;">包装费</view>
+                  <view style="display:inline-block;float:right;color:red;">￥{{packPrice/100}}</view>
+                </view>
+                <!--配送-->
+                <view class="sold-list-head">
+                  <view class="image"></view>
+                  <view style="font-weight:bold;">配送费</view>
+                  <view style="display:inline-block;float:right;color:red;">￥{{sendPrice/100}}</view>
+                </view>
+              </view>
+              <!--分割线-->
+              <view style="width:670rpx;height:2rpx;margin:0 auto;background-color:#f3f3f3;margin-top:25rpx;"> </view>
+              <!--优惠规则-->
+              <view class="sold-list-head">
+                <view style="font-weight:bold;color:#969696;">优惠规则</view>
+                <view style="display:inline-block;float:right;color:#333;">
+                  <view style="font-size:26rpx;color:#969696;margin-right:15rpx;">已优惠￥6</view>
+                  <view class="price" style="font-size:36rpx;font-weight:bold;">
+                    <text>总计：</text>
+                    <text style="color:#ff2323;">￥{{paytotal}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="contact">
+              <image src="../../../images/out-phone.png"></image>
+              <text style="display:inline-block;vertical-align:top;height:100%;line-height:98rpx;" @tap.stop="makePhoneCall">联系客服</text>
+            </view>
+            <!--用户期望-->
+            <view class="pay-way-wrap" style="background-color:#fff;margin-top:20rpx;">
+              <!--期望时间-->
+              <view class="sold-list-head">
+                <view class="image"></view>
+                <view style="font-weight:bold;">期望时间</view>
+                <view style="display:inline-block;margin-left:28rpx;color:#333;">立即配送</view>
+              </view>
+              <view class="sold-list-head" style="height:160rpx;">
+                <view class="image"></view>
+                <view style="font-weight:bold;">配送地址</view>
+                <view style="width:480rpx;display:inline-block;height:auto;margin-left:28rpx;color:#333;">
+                  <view style="height:auto;">{{orderDoneData.truename}} {{orderDoneData.mobile}}</view>
+                  <view style="height:auto;line-height:46rpx;padding-top:20rpx;">{{orderDoneData.address}}</view>
+                </view>
+              </view>
+              <view class="sold-list-head">
+                <view class="image"></view>
+                <view style="font-weight:bold;">期望时间</view>
+                <view style="display:inline-block;margin-left:28rpx;color:#333;">由蜂鸟专送提供配送服务</view>
+              </view>
+            </view>
+
+            <!--订单-->
+            <view class="pay-way-wrap" style="background-color:#fff;margin-top:20rpx;">
+              <!--期望时间-->
+              <view class="sold-list-head">
+                <view class="image"></view>
+                <view style="font-weight:bold;">订单号码</view>
+                <view style="display:inline-block;margin-left:28rpx;color:#333;">{{orderDoneData.serial}}</view>
+              </view>
+              <view class="sold-list-head">
+                <view class="image"></view>
+                <view style="font-weight:bold;">订单时间</view>
+                <view style="display:inline-block;margin-left:28rpx;color:#333;">{{orderDoneData.dateline}}</view>
+              </view>
+              <view class="sold-list-head">
+                <view class="image"></view>
+                <view style="font-weight:bold;">支付方式</view>
+                <view style="display:inline-block;margin-left:28rpx;color:#333;">{{payWay}}</view>
+              </view>
+            </view>
+            <view class="sold-list-head" style="height:auto;background-color:#fff;padding-bottom:16rpx;box-sizing:border-box;">
+              <view style="font-weight:bold;height:80rpx;">订单备注:</view>
+              <view style="width:500rpx;padding-top:20rpx;margin-left:20rpx;box-sizing:border-box;line-height:40rpx;height:auto;font-size:28rpx;">{{orderDoneData.taste_content ? orderDoneData.taste_content : '无'}}</view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  import api from '../../../api/api'
+  import util from '../../../utils/util'
+  import timer from '../../../utils/wxTimer'
+  export default class Orderdone extends wepy.page {
+    config = {
+      navigationBarTitleText: '订单详情'
+    }
+    data = {
+      applyRefund:'none',
+      tel:'',               //商家电话
+      shopNone:'block',
+      shopShow:'none',
+      shopLocation:null,
+      confirmReceipt:'none',
+      isCancleOrder:'block',
+      interval:'',
+      minute:'',
+      second:'',
+      extConfig:null,
+      mask:'none',
+      touchMoveHeight:0,      //可移动的高度
+      addressBoxHeight:0,     //address高度
+      wxTimerList:{},
+      wxTimer:'',
+      serialDetail:'',
+      mapShow:'block',      //控制的地图的显示和隐藏
+      polyline: [],
+      markers: [{
+        callout:{
+          content:'等待接单',
+          fontSize:16,
+          color:'#ffd265',
+          padding:10,
+          borderRadius:30,
+          bgColor:'#313333',
+          display:'ALWAYS'
+        },
+        width:30,
+        height:42,
+        iconPath: "../../../images/location.png",
+        latitude: 23.362490,
+        longitude: 116.715790,
+      }],
+      shopLngInfo:null,     //商户的经纬度
+      inputLngAndLat:null,  //用户输入的收货地址的经纬度
+      height:0,             //屏幕的高度
+      height2:0,
+      dayDeliverPrice:0,
+      orderDoneData:null,
+      orderId:0,
+      discountInfo:'优惠券',
+      deliverData:[],
+      singlePrice:0,
+      tips:'',
+      discount:[],          //优惠券
+      payWayActive:1000,
+      payWayStyleActive:1,
+      payWayStyleActivej:1,
+      payWay:'',            //支付方式
+      billing:true,
+      billShow:'block',
+      billData:null,
+      length:0,
+      balance:'',
+      discountShowOrFalse:'display',
+      middlePrice:0,
+      isPromotion:9,        //是否选取优惠券
+      promotionMsg:'',      //优惠信息
+      promotionPrice:'',
+      prepay_id:'',
+      userInfo:null,
+      tableWareNum:0,
+      sendPrice:0,          //配送费
+      packPrice:0,          //包装费
+      paytotal:'',          //总价
+      socketOpen:false,
+      riderName:'暂无',
+      riderPhone:'暂无'
+    }
+    components = {
+    }
+    onPageScroll(e) {
+      if(e.scrollTop == 0){
+        this.mask = 'none';
+      }else{
+        this.mask = 'block';
+      }
+      this.$apply();
+    }
+    methods = {
+      //申请退款
+      applyRefund(){
+        wx.showModal({
+          title:'提示',
+          content:'您确认要退款吗？',
+          success:(res=>{
+            if(res.confirm){
+              //this.refund()
+              let refundInfo = {
+                orderId:this.orderId,
+                total:this.orderDoneData.paytotal/100,
+                source:this.orderDoneData.paytype == 1 ? '会员卡支付' : '微信支付'
+              }
+              wx.navigateTo({
+                url:'./refund?refundInfo=' + JSON.stringify(refundInfo)
+              })
+            }
+          })
+        })
+      },
+      //确认收获
+      confirmReceipt(){
+        wx.showModal({
+          title: '提示',
+          content:'您确定要收货吗？' ,
+          success: res => {
+            if(res.confirm){
+              const url = api.apiMall + '/takeaway/receipt'
+              const data = {
+                orderId:this.orderId
+              }
+              wepy.request({
+                url: url,
+                method: 'POST',
+                data: data,
+              }).then((res)=>{
+                if(res.data.code == 0){
+                  wx.redirectTo({
+                    url:'./myOrderList'
+                  })
+                }
+                this.$apply();
+              })
+            }
+          }
+        });
+      },
+      //滚动事件
+      scroll(e){
+        this.mask = 'block';
+        return;
+        wx.pageScrollTo({
+          scrollTop:this.touchMoveHeight,
+          duration:500
+        })
+      },
+      //是否取消订单
+      isCancleOrder(){
+        //clearInterval(this.interval);
+        wx.showModal({
+          title:'提示',
+          content:'您确定要取消订单吗？',
+          success:(res=>{
+            if(res.confirm){
+              this.cancleSingleOrder();
+            }else{
+            }
+          })
+        })
+      },
+      //评价
+      comment(){
+        wx.navigateTo({
+          url:'./comment'
+        })
+      },
+      //联系客服
+      makePhoneCall(){
+        wx.makePhoneCall({
+          phoneNumber:this.tel
+        })
+      },
+    }
+    //刚进详情页订单的配送状态
+    async orderSocketStatus(){
+      const url = api.apiMall + '/takeaway/getOrderStatus'
+      const data = {
+        orderId:this.orderId
+      }
+      await wepy.request({
+        url: url,
+        method: 'POST',
+        data: data,
+      }).then((res)=>{
+        let data = res.data.data;
+        this.shopLocation = wx.getStorageSync('lngAndLat');
+        this.$apply();
+        if(this.shopLocation){
+          if(data.length != 0){
+            this.riderName = data[0].carrier_driver_name;
+            this.riderPhone = data[0].carrier_driver_phone;
+            let content = '';
+            if(data[0].order_status == 0){
+              content = "等待接单";
+              this.confirmReceipt = 'block';
+              this.isCancleOrder = 'none';
+              this.applyRefund = 'none';
+            }else if(data[0].order_status == 1){
+              content = "商家已接单"
+              this.serialDetail.stop();
+              this.confirmReceipt = 'block'
+              this.isCancleOrder = 'none';
+              this.shopShow = "block";
+              this.shopNone = "none";
+              this.applyRefund = 'none';
+              this.$apply();
+            }else if(data[0].order_status == 20){
+              content = "已分配骑手"
+              this.confirmReceipt = 'block'
+              this.isCancleOrder = 'none';
+              this.serialDetail.stop();
+              this.shopShow = "block";
+              this.shopNone = "none";
+              this.applyRefund = 'none';
+              this.$apply();
+            }else if(data[0].order_status == 80){
+              content = "骑手已到店";
+              this.confirmReceipt = 'block'
+              this.isCancleOrder = 'none';
+              this.serialDetail.stop();
+              this.shopShow = "block";
+              this.shopNone = "none";
+              this.applyRefund = 'none';
+              this.$apply();
+            }else if(data[0].order_status == 2){
+              content = "配送中"
+              this.confirmReceipt = 'block'
+              this.isCancleOrder = 'none';
+              this.serialDetail.stop();
+              this.shopShow = "block";
+              this.shopNone = "none";
+              this.applyRefund = 'none';
+              this.$apply();
+            }else if(data[0].order_status == 3){
+              content = "已送达"
+              this.confirmReceipt = 'block'
+              this.isCancleOrder = 'none';
+              this.serialDetail.stop();
+              this.shopShow = "block";
+              this.shopNone = "none";
+              this.$apply();
+            }else if(data[0].order_status == 5){
+              content = "配送异常";
+            }
+            this.$apply();
+            this.markers = [{
+              width:30,
+              height:42,
+              iconPath: "../../../images/location.png",
+              latitude:this.shopLocation.lat,
+              longitude: this.shopLocation.lng,
+              callout:{
+                content:content,
+                fontSize:16,
+                color:'#ffd265',
+                padding:10,
+                borderRadius:30,
+                bgColor:'#313333',
+                display:'ALWAYS'
+              }
+            }]
+          }else{
+          }
+        }    
+        this.$apply();
+      })
+    }
+    //计算配送员到商铺之间的距离
+    async countDistance(){
+      const url = 'https://apis.map.qq.com/ws/distance/v1/?mode=driving&from='+this.riderLat+','+this.riderLng+'&to='+this.shopLocation.lat+','+this.shopLocation.lng+'&key=7T7BZ-WXLC6-VX6SS-EMEV2-YDC3H-UZB24'
+      await wepy.request({
+        url: url,
+        method: 'GET'
+      }).then((res)=>{
+        this.distance = res.data.result.elements[0].distance/1000;
+        this.distance = util.keepTwoDecimalFull(this.distance);
+        if(this.distance){
+          this.markers = [{
+            width:30,
+            height:42,
+            iconPath: "../../../images/rider.png",
+            latitude: this.riderLat,
+            longitude: this.riderLng,
+            callout:{
+              content:this.content + this.distance + 'km',
+              fontSize:16,
+              color:'#ffd265',
+              padding:10,
+              borderRadius:30,
+              bgColor:'#313333',
+              display:'ALWAYS'
+            }
+          }]
+        }
+        this.$apply();
+      })
+    }
+    //计算配送员到用户之间的距离
+    async countUserDistance(){
+      const url = 'https://apis.map.qq.com/ws/distance/v1/?mode=driving&from='+this.riderLat+','+this.riderLng+'&to='+this.orderDoneData.lat+','+this.orderDoneData.lng+'&key=7T7BZ-WXLC6-VX6SS-EMEV2-YDC3H-UZB24'
+      await wepy.request({
+        url: url,
+        method: 'GET'
+      }).then((res)=>{
+        this.distance = res.data.result.elements[0].distance/1000;
+        this.distance = util.keepTwoDecimalFull(this.distance);
+        if(this.distance){
+          this.markers = [{
+            width:30,
+            height:42,
+            iconPath: "../../../images/rider.png",
+            latitude: this.riderLat,
+            longitude: this.riderLng,
+            callout:{
+              content:this.content + this.distance + 'km',
+              fontSize:16,
+              color:'#ffd265',
+              padding:10,
+              borderRadius:30,
+              bgColor:'#313333',
+              display:'ALWAYS'
+            }
+          }]
+        }
+        //将当前状态保存下来
+        wx.setStorage({
+          key:'deliverStatus',
+          data:this.markers
+        })
+        this.$apply();
+      })
+    }
+    //查询骑手的位置
+    async checkRiderLocation(){
+      const url = api.apiMall + '/third/getRider'
+      const data = {
+        orderId:this.orderId
+      }
+      await wepy.request({
+        url: url,
+        method: 'POST',
+        data: data,
+      }).then((res)=>{
+        //骑手的经纬度
+        this.riderLat = res.data.results.latitude;
+        this.riderLng = res.data.results.longitude;
+        //获取骑手的姓名和电话
+        this.riderName = res.data.results.carrierName;
+        this.riderPhone = res.data.results.carrierPhone;
+        if(this.riderLat){
+          this.countDistance();
+        }
+        this.$apply();
+      })
+    }
+    //查询骑手的位置
+    async checkRiderLocation2(){
+      const url = api.apiMall + '/third/getRider'
+      const data = {
+        orderId:this.orderId
+      }
+      await wepy.request({
+        url: url,
+        method: 'POST',
+        data: data,
+      }).then((res)=>{
+        //骑手的经纬度
+        this.riderLat = res.data.results.latitude;
+        this.riderLng = res.data.results.longitude;
+        if(this.riderLat){
+          this.countUserDistance();
+        }
+        this.$apply();
+      })
+    }
+    //手动取消订单接口
+    async cancleSingleOrder(){
+      const url = api.apiMall + '/takeaway/cancelOrder'
+      const data = {
+        orderId:this.orderId
+      }
+      await wepy.request({
+        url: url,
+        method: 'POST',
+        data: data,
+      }).then((res)=>{
+        if(res.data.code == 0){
+          wx.showToast({
+            title:'取消成功',
+            icon:'success',
+            success:(res=>{
+              this.timeOver();
+              let refundInfo = {
+                orderId:this.orderId,
+                total:this.orderDoneData.paytotal/100,
+                source:this.orderDoneData.paytype == 1 ? '会员卡支付' : '微信支付'
+              }
+              wx.redirectTo({
+                url:'./refund?refundInfo=' + JSON.stringify(refundInfo)
+              })
+            })
+          })
+        }
+      })
+    }
+    //申请退款
+    async refund(){
+      const url = api.apiMall + '/takeaway/refund'
+      const data = {
+        orderId:this.orderId,
+        content:'',
+        merchantNumber:this.extConfig.merchantAppId,
+        thirdAppId:this.extConfig.thirdAppId
+      }
+      await wepy.request({
+        url: url,
+        method: 'POST',
+        data: data,
+      }).then((res)=>{
+        // this.wxTimer2.stop();
+        wx.showToast({
+          title:'退款成功',
+          icon:'success',
+          success:(res=>{
+            wx.redirectTo({
+              url:'./myOrderList'
+            })
+          })
+        })
+      })
+    }
+    //刚进详情页订单的配送状态
+    async orderSocketStatus(){
+      const url = api.apiMall + '/takeaway/getOrderStatus'
+      const data = {
+        orderId:this.orderId
+      }
+      await wepy.request({
+        url: url,
+        method: 'POST',
+        data: data,
+      }).then((res)=>{
+        let data = res.data.data;
+        this.shopLocation = wx.getStorageSync('lngAndLat');
+        this.$apply();
+        if(this.shopLocation){
+          if(data.length != 0){
+            this.riderName = data[0].carrier_driver_name;
+            this.riderPhone = data[0].carrier_driver_phone;
+            let content = '';
+            if(data[0].order_status == 0){
+              content = "等待接单";
+              this.confirmReceipt = 'block';
+              this.isCancleOrder = 'none';
+              this.applyRefund = 'none';
+            }else if(data[0].order_status == 1){
+              content = "商家已接单"
+              this.serial.stop();
+              this.confirmReceipt = 'block'
+              this.isCancleOrder = 'none';
+              this.applyRefund = 'none';
+              this.shopShow = "block";
+              this.shopNone = "none";
+              this.$apply();
+            }else if(data[0].order_status == 20){
+              content = "已分配骑手"
+              this.confirmReceipt = 'block'
+              this.isCancleOrder = 'none';
+              this.applyRefund = 'none';
+              this.serial.stop();
+              this.shopShow = "block";
+              this.shopNone = "none";
+              this.$apply();
+            }else if(data[0].order_status == 80){
+              content = "骑手已到店"
+              this.confirmReceipt = 'block'
+              this.isCancleOrder = 'none';
+              this.applyRefund = 'none';
+              this.serial.stop();
+              this.shopShow = "block";
+              this.shopNone = "none";
+              this.$apply();
+            }else if(data[0].order_status == 2){
+              content = "配送中"
+              this.confirmReceipt = 'block'
+              this.isCancleOrder = 'none';
+              this.applyRefund = 'none';
+              this.serial.stop();
+              this.shopShow = "block";
+              this.shopNone = "none";
+              this.$apply();
+            }else if(data[0].order_status == 3){
+              content = "已送达"
+              this.confirmReceipt = 'block'
+              this.isCancleOrder = 'none';
+              this.applyRefund = 'none';
+              this.serial.stop();
+              this.shopShow = "block";
+              this.shopNone = "none";
+              this.$apply();
+            }else if(data[0].order_status == 5){
+              content = "配送异常"
+            }
+            this.$apply();
+            this.markers = [{
+              width:30,
+              height:42,
+              iconPath: "../../../images/location.png",
+              latitude:this.shopLocation.lat,
+              longitude: this.shopLocation.lng,
+              callout:{
+                content:content,
+                fontSize:16,
+                color:'#ffd265',
+                padding:10,
+                borderRadius:30,
+                bgColor:'#313333',
+                display:'ALWAYS'
+              }
+            }]
+          }else{
+
+          }
+        }    
+        this.$apply();
+      })
+    }
+    //请求订单支付成功页面
+    async getOrderDone(){
+      const url = api.apiMall + '/takeaway/orderFinish'
+      const data = {
+        orderId:this.orderId
+      }
+      await wepy.request({
+        url: url,
+        method: 'POST',
+        data: data,
+      }).then((res)=>{
+        this.orderDoneData = res.data.data;
+        this.deliverData = res.data.data.takeaways;     //商品
+        this.sendPrice = res.data.data.send_price;      //配送费
+        this.packPrice = res.data.data.pack_price;
+        this.paytotal = util.keepTwoDecimalFull(res.data.data.paytotal/100);
+        this.payWay = res.data.data.paytype;
+        if(this.payWay == 1){
+          this.payWay = '会员卡支付';
+        }else if(this.payWay == 2){
+          this.payWay = '微信支付';
+        }
+        //五分钟倒计时
+        this.serialDetail = new timer({
+          beginTime:res.data.datetime,
+          name:res.data.data.serial,
+          complete:(res=>{
+            //倒计时结束，申请退款
+            this.applyRefund = 'block';
+            this.confirmReceipt = 'none';
+            this.isCancleOrder = 'none';
+            this.$apply();
+            this.serialDetail.stop();
+          })
+        })
+        this.serialDetail.start(this);       //开启倒计时
+        if(this.serialDetail){
+          this.orderSocketStatus();
+        }
+        this.$apply();
+      })
+    }
+    //取消订单时将定时器置0
+    async timeOver(){
+      const url = api.apiMall + '/takeaway/timeover'
+      const data = {
+        orderId:this.orderId
+      }
+      await wepy.request({
+        url: url,
+        method: 'POST',
+        data: data,
+      }).then((res)=>{
+      })
+    }
+    onLoad(options){ 
+      //获取商家的位置
+      this.shopLocation = wx.getStorageSync('lngAndLat');
+      if(this.shopLocation){
+        this.markers = [{
+          width:30,
+          height:42,
+          iconPath: "../../../images/location.png",
+          latitude:this.shopLocation.lat,
+          longitude: this.shopLocation.lng,
+          callout:{
+            content:'等待接单',
+            fontSize:16,
+            color:'#ffd265',
+            padding:10,
+            borderRadius:30,
+            bgColor:'#313333',
+            display:'ALWAYS'
+          }
+        }]
+      }
+      //获取商家电话
+      this.tel = wx.getStorageSync('shopTel');
+      //获取extConfig
+      this.extConfig = wx.getStorageSync("extConfig");
+      //获取配送费
+      this.dayDeliverPrice = wx.getStorageSync('deliverPrice');
+      //获取订单ID
+      this.orderId = options.orderId;
+      if(this.orderId){
+        this.getOrderDone();
+        //this.orderSocketStatus();
+      }
+      //获取个人信息
+      wx.getStorage({
+        key: 'userInfo',
+        success:(res=>{
+          this.userInfo = res.data;
+          this.$apply();
+        })
+      })
+      this.length = Object.keys(options).length;
+      this.billData = options;
+      this.tips = wepy.$instance.globalData.takeOutTips;
+      this.$apply();
+    }
+    onShow(){
+      var socketOpen = false;
+      //连接websocket
+      wx.connectSocket({
+        url:'wss://socket.qumatou.com.cn'
+      })
+      wx.onSocketOpen(function (res) {
+        socketOpen = true;
+        let data1 = {
+          type:'UPDATE_NUMS',
+          desktop:'45'
+        }
+        data1 = JSON.stringify(data1);
+        if (socketOpen) {
+          setInterval(()=>{
+            wx.sendSocketMessage({
+              data: data1
+            })
+          },20000)
+        }
+      })
+      // 监听WebSocket关闭。
+      wx.onSocketClose(function (res) { 
+        wx.connectSocket({
+          url:'wss://socket.qumatou.com.cn'
+        })
+      })
+      wx.onSocketMessage(res=>{
+        let data = JSON.parse(res.data)
+        if(this.orderDoneData.serial){
+          if(data.message == 'UPDATE_ELE' && data.send_status == '1' && data.order_serial == this.orderDoneData.serial){
+            this.markers[0].callout.content = '商家已接单';
+            this.timeOver();
+            this.serialDetail.stop();
+            this.shopShow = "block";
+            this.shopNone = "none";
+            this.confirmReceipt = 'block';
+            this.isCancleOrder = 'none';
+            this.applyRefund = 'none';
+            this.$apply();
+          }else if(data.message == 'UPDATE_ELE' && data.send_status == '20' && data.order_serial == this.orderDoneData.serial){
+            this.content = "骑手距离商家";
+            this.serialDetail.stop();
+            this.shopShow = "block";
+            this.shopNone = "none";
+            this.applyRefund = 'none';
+            this.checkRiderLocation()
+            this.$apply();
+          }else if(data.message == 'UPDATE_ELE' && data.send_status == '80' && data.order_serial == this.orderDoneData.serial){
+            this.markers[0].callout.content = '骑手已到店';
+            this.serialDetail.stop();
+            this.shopShow = "block";
+            this.shopNone = "none";
+            this.applyRefund = 'none';
+            this.$apply();
+          }else if(data.message == 'UPDATE_ELE' && data.send_status == '2' && data.order_serial == this.orderDoneData.serial){
+            this.content = "骑手距离您";
+            this.checkRiderLocation2()          //骑手经纬度有了
+          }else if(data.message == 'UPDATE_ELE' && data.send_status == '3' && data.order_serial == this.orderDoneData.serial){
+            this.serialDetail.stop();
+            this.shopShow = "block";
+            this.shopNone = "none";
+            this.applyRefund = 'none';
+            //骑手的位置应该在用户所在的经纬度
+            this.markers = [{
+              width:30,
+              height:42,
+              iconPath: "../../../images/location.png",
+              latitude:this.orderDoneData.lat,
+              longitude: this.orderDoneData.lng,
+              callout:{
+                content:'已送达',
+                fontSize:16,
+                color:'#ffd265',
+                padding:10,
+                borderRadius:30,
+                bgColor:'#313333',
+                display:'ALWAYS'
+              }
+            }]
+            this.$apply();
+          }else if(data.message == 'UPDATE_ELE' && data.send_status == '5' && data.order_serial == this.orderDoneData.serial){
+            this.markers[0].callout.content = '配送异常';
+            this.$apply();
+          }
+        }
+      })
+      //获取屏幕信息
+      wx.getSystemInfo({
+        success: (res=>{
+          this.height = res.windowHeight;
+          this.$apply();
+          //获取某元素的高度
+          let that = this;
+          var query = wx.createSelectorQuery();
+          query.select('#address-wrap').boundingClientRect()
+          query.exec(function (res){
+            that.addressBoxHeight = res[0].height;
+            that.touchMoveHeight = Number(that.height) - Number(that.addressBoxHeight);
+            that.touchMoveHeight = Number(that.touchMoveHeight);
+            that.height2 = Number(that.height) - Number(that.addressBoxHeight);
+            that.$apply();
+          })
+        })
+      })
+      //进入页面有一个加载提示
+      wx.showToast({
+        title:'加载中',
+        icon:'loading',
+        duration:1000
+      })
+    }
+  }
+</script>
+

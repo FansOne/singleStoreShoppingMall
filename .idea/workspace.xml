@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="806063d2-b3e2-4164-95af-2e914bba56ac" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="myproject" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="cancleOrderDetail.wpy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/index/takeOut/cancleOrderDetail.wpy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="9329">
+              <caret line="501" column="24" selection-start-line="501" selection-start-column="24" selection-end-line="501" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="order.wpy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/index/takeOut/order.wpy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15770">
+              <caret line="830" column="10" selection-start-line="830" selection-start-column="10" selection-end-line="830" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.wpy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/index/index.wpy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8759">
+              <caret line="468" column="18" selection-start-line="468" selection-start-column="18" selection-end-line="468" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="deliver.wpy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/index/takeOut/deliver.wpy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="12350">
+              <caret line="650" column="24" selection-start-line="650" selection-start-column="24" selection-end-line="650" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="readyToPay.wpy" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pages/index/takeOut/readyToPay.wpy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="365">
+              <caret line="749" column="14" selection-start-line="749" selection-start-column="14" selection-end-line="749" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="orderCancle.wpy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/index/takeOut/orderCancle.wpy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="9367">
+              <caret line="495" column="31" selection-start-line="495" selection-start-column="31" selection-end-line="495" selection-end-column="31" />
+              <folding>
+                <element signature="n#style#0;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#1;n#view#0;n#view#0;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#1;n#view#0;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#1;n#view#2;n#view#0;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#2;n#view#2;n#view#0;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#1;n#view#3;n#view#0;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#2;n#view#3;n#view#0;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#1;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#0;n#view#2;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#1;n#view#0;n#view#2;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#1;n#view#2;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#0;n#view#1;n#view#2;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#1;n#view#1;n#view#2;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#text#1;n#view#1;n#view#1;n#view#2;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#text#0;n#view#1;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#2;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#1;n#view#0;n#view#2;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#2;n#view#0;n#view#2;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#1;n#view#2;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#1;n#view#1;n#view#2;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#2;n#view#1;n#view#2;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#0;n#view#2;n#view#1;n#view#2;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#1;n#view#2;n#view#1;n#view#2;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#1;n#view#2;n#view#2;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#2;n#view#2;n#view#2;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#3;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#1;n#view#0;n#view#3;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#2;n#view#0;n#view#3;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#1;n#view#1;n#view#3;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#2;n#view#1;n#view#3;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#1;n#view#2;n#view#3;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#view#2;n#view#2;n#view#3;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>sendPrice</find>
+      <find>dayDeliverPrice</find>
+      <find>packPrice</find>
+      <find>orderCommit</find>
+      <find>支付方式</find>
+      <find>&quot;完成了&quot;</find>
+      <find>/takeaway/cancelOrder</find>
+      <find>cancleSingleOrder</find>
+      <find>getWaitToPay</find>
+      <find>订单</find>
+      <find>wxT</find>
+      <find>is_promotion</find>
+      <find>morePeopleData</find>
+      <find>orderId</find>
+      <find>cancleOrder</find>
+      <find>payWayActive</find>
+      <find>支付</find>
+      <find>重新下单</find>
+      <find>payMoney</find>
+      <find>onLoad</find>
+      <find>deliverData</find>
+      <find>length</find>
+      <find>userId</find>
+      <find>food/index</find>
+      <find>this.userId</find>
+      <find>mall-car</find>
+      <find>总计</find>
+      <find>myMenu</find>
+      <find>addAddressList</find>
+      <find>取消订单</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/pages/index/deliver/billList.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/deliver/moreBillList.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/takeOut/addAddress.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/takeOut/addressList.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/takeOut/editAddress.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/mall/mall.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/deliver/noneTablenumOrderDetail.wpy.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/deliver/getUserInfo.wpy" />
+        <option value="$PROJECT_DIR$/ext.json" />
+        <option value="$PROJECT_DIR$/src/pages/index/deliver/check.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/deliver/payMent.wpy" />
+        <option value="$PROJECT_DIR$/project.config.json" />
+        <option value="$PROJECT_DIR$/dist/ext.json" />
+        <option value="$PROJECT_DIR$/src/components/digit.wpy" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/pages/index/deliver/chooseNum.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/deliver/comment.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/deliver/foodsPackageDetail.wpy" />
+        <option value="$PROJECT_DIR$/src/components/commentStar.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/takeOut/tips.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/takeOut/refund.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/payMent.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/takeOut/voucher.wpy" />
+        <option value="$PROJECT_DIR$/src/components/testComponent.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/test.wpy" />
+        <option value="$PROJECT_DIR$/src/components/commentStarShow.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/deliver/orderDetail.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/deliver/noneTablenumOrderDetail.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/deliver/orderDone.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/deliver/moreOrderDone.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/deliver/mine.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/takeOut/comment.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/takeOut/map.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/takeOut/orderDone.wpy" />
+        <option value="$PROJECT_DIR$/src/utils/util.js" />
+        <option value="$PROJECT_DIR$/src/pages/index/deliver/myOrderList.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/deliver/deliver.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/takeOut/orderDetail.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/score/score.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/takeOut/payedOrderDetail.wpy" />
+        <option value="$PROJECT_DIR$/src/app.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/takeOut/myOrderList.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/takeOut/waitToPayOrderDetail.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/takeOut/orderCancle.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/takeOut/cancleOrderDetail.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/deliver/myMenu.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/deliver/moreMyMenu.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/index.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/takeOut/deliver.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/takeOut/readyToPay.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index/takeOut/order.wpy" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="174" />
+    <option name="y" value="23" />
+    <option name="width" value="1409" />
+    <option name="height" value="979" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="myproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myproject" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myproject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myproject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myproject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="SearchEverywhereHistoryKey" value="console.log&#9;null&#9;null" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="editor.config.accepted" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.prettier" value="true" />
+    <property name="node.js.path.for.package.prettier" value="project" />
+    <property name="node.js.selected.package.prettier" value="" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages" />
+      <recent name="$PROJECT_DIR$/src/pages/index/deliver" />
+      <recent name="$PROJECT_DIR$/src/images/index" />
+      <recent name="$PROJECT_DIR$/src/components/index" />
+      <recent name="$PROJECT_DIR$/src/pages/score" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/index/takeOut" />
+      <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/src/pages/index/deliver" />
+      <recent name="$PROJECT_DIR$/src/images/index" />
+      <recent name="$PROJECT_DIR$/src/images" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="806063d2-b3e2-4164-95af-2e914bba56ac" name="Default" comment="" />
+      <created>1523156034843</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1523156034843</updated>
+      <workItem from="1523156037432" duration="3235000" />
+      <workItem from="1523166638776" duration="1844000" />
+      <workItem from="1523172428256" duration="6292000" />
+      <workItem from="1523242352820" duration="19901000" />
+      <workItem from="1523268761850" duration="3777000" />
+      <workItem from="1523323887564" duration="2668000" />
+      <workItem from="1523327724464" duration="24499000" />
+      <workItem from="1523410582082" duration="3157000" />
+      <workItem from="1523415105957" duration="23829000" />
+      <workItem from="1523446303501" duration="514000" />
+      <workItem from="1523496416665" duration="26199000" />
+      <workItem from="1523583996358" duration="31422000" />
+      <workItem from="1523669547405" duration="1433000" />
+      <workItem from="1523671515766" duration="27978000" />
+      <workItem from="1523843146936" duration="27781000" />
+      <workItem from="1524101577478" duration="33315000" />
+      <workItem from="1524187256652" duration="31070000" />
+      <workItem from="1524274796802" duration="20883000" />
+      <workItem from="1524447941898" duration="29829000" />
+      <workItem from="1524533352573" duration="26040000" />
+      <workItem from="1524620535584" duration="13151000" />
+      <workItem from="1524639523975" duration="17528000" />
+      <workItem from="1524705286862" duration="25617000" />
+      <workItem from="1524793610319" duration="12619000" />
+      <workItem from="1524879914304" duration="22188000" />
+      <workItem from="1525225194675" duration="11992000" />
+      <workItem from="1525240516001" duration="19913000" />
+      <workItem from="1525311709426" duration="28605000" />
+      <workItem from="1525355423176" duration="7073000" />
+      <workItem from="1525398075709" duration="32523000" />
+      <workItem from="1525485542583" duration="20339000" />
+      <workItem from="1525509372725" duration="10035000" />
+      <workItem from="1525657118261" duration="32352000" />
+      <workItem from="1525695074190" duration="2190000" />
+      <workItem from="1525743155559" duration="36785000" />
+      <workItem from="1525830224554" duration="30787000" />
+      <workItem from="1525915700745" duration="31409000" />
+      <workItem from="1526002287789" duration="3652000" />
+      <workItem from="1526007339688" duration="1777000" />
+      <workItem from="1526009152101" duration="1800000" />
+      <workItem from="1526010989617" duration="1780000" />
+      <workItem from="1526112997051" duration="926000" />
+      <workItem from="1526114014661" duration="5436000" />
+      <workItem from="1526262057638" duration="12096000" />
+      <workItem from="1526278065018" duration="21546000" />
+      <workItem from="1526347762367" duration="26337000" />
+      <workItem from="1526434009460" duration="25335000" />
+      <workItem from="1526520914549" duration="3790000" />
+      <workItem from="1526534223229" duration="23499000" />
+      <workItem from="1526607066082" duration="33081000" />
+      <workItem from="1526694161837" duration="19513000" />
+      <workItem from="1526866463473" duration="16033000" />
+      <workItem from="1526897996537" duration="3613000" />
+      <workItem from="1526952508247" duration="28626000" />
+      <workItem from="1527039193212" duration="28861000" />
+      <workItem from="1527125988540" duration="31019000" />
+      <workItem from="1527212413751" duration="14642000" />
+      <workItem from="1527300773505" duration="9914000" />
+      <workItem from="1527312441659" duration="742000" />
+      <workItem from="1527313495881" duration="9636000" />
+      <workItem from="1527471293022" duration="30330000" />
+      <workItem from="1527557803164" duration="32638000" />
+      <workItem from="1527643843646" duration="15156000" />
+      <workItem from="1527666151603" duration="11636000" />
+      <workItem from="1527730607993" duration="23798000" />
+      <workItem from="1527817540248" duration="26850000" />
+      <workItem from="1527904110024" duration="26641000" />
+      <workItem from="1528077169705" duration="25527000" />
+      <workItem from="1528162193749" duration="18440000" />
+      <workItem from="1528249059213" duration="6766000" />
+      <workItem from="1528258323714" duration="6000" />
+      <workItem from="1528258332871" duration="12664000" />
+      <workItem from="1528335074697" duration="8516000" />
+      <workItem from="1528423045686" duration="22015000" />
+      <workItem from="1528515096095" duration="1212000" />
+      <workItem from="1528517463043" duration="15594000" />
+      <workItem from="1528682465561" duration="20577000" />
+      <workItem from="1528767876118" duration="25814000" />
+      <workItem from="1528854080124" duration="1889000" />
+      <workItem from="1528862393884" duration="1425000" />
+      <workItem from="1528866930540" duration="433000" />
+      <workItem from="1528973422916" duration="43000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1352396000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="174" y="23" width="1409" height="979" extended-state="0" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12391931" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50144094" side_tool="true" weight="0.20092379" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32879817" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4985591" visible="true" weight="0.16397229" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3290993" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26548672" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32879817" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49932706" visible="true" weight="0.24133949" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50067294" side_tool="true" weight="0.12817553" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3290993" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="83" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/pages/index/deliver/moreBillList.wpy" />
+    <entry file="file://$PROJECT_DIR$/src/components/child.wpy" />
+    <entry file="file://$PROJECT_DIR$/src/pages/index/takeOut/editAddress.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4777">
+          <caret line="282" column="39" selection-start-line="282" selection-start-column="39" selection-end-line="282" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext.json" />
+    <entry file="file://$PROJECT_DIR$/src/pages/payMent.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="67" column="5" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/math.js" />
+    <entry file="file://$PROJECT_DIR$/wepy.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-48">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json" />
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project.config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/deliver/foodsPackageDetail.wpy" />
+    <entry file="file://$PROJECT_DIR$/src/pages/index/deliver/foodsDetail.wpy" />
+    <entry file="file://$PROJECT_DIR$/src/components/digit.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-47">
+          <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/mine/mine.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="86" column="36" selection-start-line="86" selection-start-column="36" selection-end-line="86" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/mall/mall.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="329" column="12" lean-forward="true" selection-end-line="351" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/takeOut/refund.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="287" lean-forward="true" selection-start-line="287" selection-end-line="287" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/ext.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="37" lean-forward="true" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/takeOut/voucher.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/payMent.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="144" column="5" lean-forward="true" selection-start-line="144" selection-start-column="5" selection-end-line="144" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/commentStar.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="37" column="19" lean-forward="true" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/test.wpy" />
+    <entry file="file://$PROJECT_DIR$/src/components/testComponent.wpy" />
+    <entry file="file://$PROJECT_DIR$/src/components/commentStarShow.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/deliver/orderDetail.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="533" column="8" lean-forward="true" selection-start-line="530" selection-start-column="6" selection-end-line="533" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/deliver/noneTablenumOrderDetail.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="473" column="14" lean-forward="true" selection-start-line="473" selection-start-column="14" selection-end-line="473" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/deliver/orderDone.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="555" column="4" selection-start-line="555" selection-start-column="4" selection-end-line="555" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/deliver/moreOrderDone.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="556" column="5" lean-forward="true" selection-start-line="550" selection-start-column="4" selection-end-line="556" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../wxapp-jsapi-master/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2809" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/takeOut/tips.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="72" column="45" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="54" column="6" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/deliver/mine.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="271" column="40" lean-forward="true" selection-start-line="271" selection-start-column="40" selection-end-line="271" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/deliver/comment.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="159" column="48" lean-forward="true" selection-start-line="156" selection-start-column="6" selection-end-line="159" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/takeOut/comment.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="184" column="14" lean-forward="true" selection-start-line="184" selection-start-column="14" selection-end-line="184" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/deliver/myOrderList.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="118" column="130" lean-forward="true" selection-start-line="118" selection-start-column="130" selection-end-line="118" selection-end-column="130" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/deliver/chooseNum.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="292" column="23" selection-start-line="292" selection-start-column="23" selection-end-line="292" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/takeOut/orderDone.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="648" column="23" selection-start-line="648" selection-start-column="23" selection-end-line="648" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1335">
+          <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/score/score.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/takeOut/payedOrderDetail.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="344" column="19" lean-forward="true" selection-start-line="344" selection-start-column="19" selection-end-line="344" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="722">
+          <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/deliver/deliver.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="1214" column="20" selection-start-line="1214" selection-start-column="20" selection-end-line="1214" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/takeOut/waitToPayOrderDetail.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="766" column="19" lean-forward="true" selection-start-line="766" selection-start-column="19" selection-end-line="766" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/takeOut/orderCancle.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9367">
+          <caret line="495" column="31" selection-start-line="495" selection-start-column="31" selection-end-line="495" selection-end-column="31" />
+          <folding>
+            <element signature="n#style#0;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#1;n#view#0;n#view#0;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#1;n#view#0;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#1;n#view#2;n#view#0;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#2;n#view#2;n#view#0;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#1;n#view#3;n#view#0;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#2;n#view#3;n#view#0;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#1;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#0;n#view#2;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#1;n#view#0;n#view#2;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#1;n#view#2;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#0;n#view#1;n#view#2;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#1;n#view#1;n#view#2;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#text#1;n#view#1;n#view#1;n#view#2;n#view#0;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#text#0;n#view#1;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#2;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#1;n#view#0;n#view#2;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#2;n#view#0;n#view#2;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#1;n#view#2;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#1;n#view#1;n#view#2;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#2;n#view#1;n#view#2;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#0;n#view#2;n#view#1;n#view#2;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#1;n#view#2;n#view#1;n#view#2;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#1;n#view#2;n#view#2;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#2;n#view#2;n#view#2;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#3;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#1;n#view#0;n#view#3;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#2;n#view#0;n#view#3;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#1;n#view#1;n#view#3;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#2;n#view#1;n#view#3;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#1;n#view#2;n#view#3;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#2;n#view#2;n#view#3;n#view#1;n#view#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/takeOut/cancleOrderDetail.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9329">
+          <caret line="501" column="24" selection-start-line="501" selection-start-column="24" selection-end-line="501" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/deliver/myMenu.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="629" column="8" selection-start-line="629" selection-start-column="8" selection-end-line="629" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/deliver/moreMyMenu.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="573" column="16" lean-forward="true" selection-start-line="573" selection-start-column="16" selection-end-line="573" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/takeOut/myOrderList.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="190" column="12" lean-forward="true" selection-start-line="190" selection-start-column="12" selection-end-line="190" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/index.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8759">
+          <caret line="468" column="18" selection-start-line="468" selection-start-column="18" selection-end-line="468" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/takeOut/deliver.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12350">
+          <caret line="650" column="24" selection-start-line="650" selection-start-column="24" selection-end-line="650" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/takeOut/order.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15770">
+          <caret line="830" column="10" selection-start-line="830" selection-start-column="10" selection-end-line="830" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index/takeOut/readyToPay.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="749" column="14" selection-start-line="749" selection-start-column="14" selection-end-line="749" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

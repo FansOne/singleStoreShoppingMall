@@ -1,0 +1,196 @@
+<style lang="less">
+  @import "./styles/base";
+  @import "./styles/tabStyle";
+  @import './styles/iconfont';
+  view{
+    font-size: 30rpx;
+  }
+</style>
+
+<script>
+import wepy from 'wepy'
+import 'wepy-async-function'
+import api from './api/requestUrl'
+
+export default class extends wepy.app {
+  config = {
+    pages: [
+      'pages/index/index',
+      'pages/index/deliver/deliver',
+      'pages/index/deliver/chooseNum',
+      'pages/index/deliver/myMenu',
+      'pages/index/deliver/orderDone',
+      'pages/index/deliver/mine',
+      'pages/index/deliver/myOrderList',
+      'pages/index/deliver/comment',
+      'pages/index/deliver/orderDetail',
+      'pages/index/deliver/noneTablenumOrderDetail',
+      'pages/index/deliver/moreMyMenu',
+      'pages/index/deliver/moreOrderDone',
+      'pages/index/deliver/paymentSuccess',
+      'pages/index/deliver/selectCoupon',
+      'pages/index/deliver/voucherCenter',
+      'pages/inputValue',
+      'pages/orderDetailesOT',
+      'pages/payMentDetails',
+      'pages/payMentSuccess',
+      'pages/payMentRecharge',
+      'pages/userVoucher',
+      'pages/personalAuthentication',
+      'pages/shareCpn',
+      'pages/userOrder',
+      'pages/selectCoupon',
+      'pages/payedCouponsList',
+      'pages/newLogisticsMessage',
+      'pages/index/shoppingMall/index',
+      'pages/index/shoppingMall/details',
+      'pages/index/shoppingMall/userComment',
+      'pages/index/shoppingMall/confirmOrder',
+      'pages/index/shoppingMall/orderDetails',
+      'pages/index/shoppingMall/orderEvaluateDetail',
+      'pages/index/shoppingMall/startComment'
+    ],
+    subPackages:[{
+      root:'pages/group',
+      pages:[
+        'Collage/index',
+        'Collage/datails',
+        'Collage/confirmOrder',
+        'Collage/paySuccess',
+        'Collage/sharingSpells',
+        'Collage/orderDetail'
+      ]
+    },{
+      root: 'packageMembershipCard',
+      pages: [
+        "membershipCard/memberList",
+        "membershipCard/cardIndex",
+        "membershipCard/myIntegral",
+        "membershipCard/membershipMessage",
+        "membershipCard/exchange",
+        "membershipCard/cardShare",
+        'membershipCard/cardRecharge',
+        'membershipCard/payMentCardRecharge',
+        'membershipCard/selectCardLists',
+        'membershipCard/searchMember',
+        'integralManagement/luckDrawIndex',
+        'integralManagement/luckDrawDetail',
+        'integralManagement/luckDrawSuccess',
+        'integralManagement/luckDrawAdministration',
+        'IntegralMall/index',
+        'IntegralMall/details',
+        'IntegralMall/orderLists',
+        'IntegralMall/orderConfirm',
+        'IntegralMall/paySuccess',
+        'IntegralMall/orderdetail'
+      ]
+    },{
+      root: 'pages/index/takeOut/',
+      pages: [
+        'deliver',
+        'foodsPackageDetail',
+        'order',
+        'orderDone',
+        'orderCancle',
+        'waitToPayOrderDetail',
+        'payedOrderDetail',
+        'cancleOrderDetail',
+        'addressList',
+        'addAddress',
+        'editAddress',
+        'tips',
+        'comment',
+        'refund',
+        'voucher',
+        'myOrderList',
+        'readyToPay',
+        'refundDetail',
+        'orderDoneDetail',
+        'shopDeliverDetail',
+        'selectCoupon',
+      ]
+    }],
+    window: {
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#ffd265',
+      navigationBarTitleText: '堂食点餐',
+      navigationBarTextStyle: 'black'
+    },
+    permission: {
+      "scope.userLocation": {
+        "desc": "你的位置信息将用于小程序筛选店铺使用"
+      }
+    },
+    tabBar: {
+      selectedColor: "#333333",
+      list: [{
+        pagePath: "pages/index/index",
+        text: "首页",
+        iconPath: "./images/page-active.png",
+        selectedIconPath: "./images/page.png"
+      },{
+        pagePath: "pages/index/shoppingMall/index",
+        text: "商城",
+        iconPath: "./images/shangchenghide.png",
+        selectedIconPath: "./images/shangchengshow.png"
+      },{
+        pagePath: "pages/index/deliver/mine",
+        text: "我的",
+        iconPath: "./images/mine.png",
+        selectedIconPath: "./images/mine-active.png"
+      }]
+    },
+    networkTimeout: {
+      request: 5000,
+      downloadFile: 7000
+    },
+  }
+  globalData = {}
+  constructor () {
+    super()
+    this.use('requestfix');
+    this.use('promisify');
+  }
+  onLaunch() {
+    let extConfig = wx.getExtConfigSync? wx.getExtConfigSync(): {};
+    wepy.$instance.globalData.PidMid = extConfig;
+    // 检查版本更新
+    const updateManager = wx.getUpdateManager();
+    updateManager.onUpdateReady( ()=> {
+        wx.showModal({
+            title: '更新提示',
+            content: '新版本已经准备好，是否重启应用？',
+            success:  (res)=> {
+                if (res.confirm) {
+                    // 新的版本已经下载好，调用 applyUpdate 应用新版本并重启
+                    updateManager.applyUpdate()
+                }
+            }
+        })
+    })
+    // 登录换取用户Token
+    wx.login({
+      success: res => {
+        wepy.request({
+          url: api.getToken,
+          method: 'POST',
+          data: {
+            p_id: extConfig.p_id,
+            m_id: extConfig.m_id,
+            CODE: res.code
+          }
+        }).then(res=>{
+          let token = res.data.data[0].accessToken;
+          wx.setStorageSync('token', token);
+        }).catch(res=>{
+          wx.showToast({
+            title: '请求服务器数据异常',
+            icon: 'none',
+            duration: 1500
+          });
+        });
+      }
+    });
+  }
+}
+</script>

@@ -1,0 +1,73 @@
+<script>
+import wepy from 'wepy';
+import orderGoods from '../components/orderGoods'
+import requestUrl from '../api/requestUrl'
+import { requestData } from '../api/requestData'
+
+export default class userOrder extends wepy.page {
+    config = {
+        navigationBarTitleText: '订单',
+    };
+    components = {
+        orderGoods:orderGoods
+    };
+
+    data = {
+        page_Num:0,
+        orderList:null,
+        noOrderList:false,
+        status:'',
+    };
+    methods = {
+    };
+
+    events = {};
+    onLoad(status) {
+        // 获取订单
+        this.status = options.status
+        this.orderListsData(options.status)
+    };
+    onReachBottom(){
+        this.page_Num++
+        this.orderListsData(this.status)
+    }
+    // 获取订单列表
+    orderListsData(status){
+        wx.showLoading({title: '加载中...'});
+        let url = requestUrl.orderList;
+        let data = {
+            p_id: wepy.$instance.globalData.PidMid.p_id,
+            object:0,//0-消费者 1-商户
+            // userid:"15309291231", //objec 为1的时候 填此字段
+            type: status,//-1-全部订单 0 到店买单 1 门店/电商 2-本地产品 3-外卖
+            page_Num: this.page_Num,
+            token:wx.getStorageSync('token')
+        }
+        requestData(url,'POST',data).then(res=>{
+            wx.hideLoading();
+            if(this.page_Num==0){
+                this.orderList = res.data.data
+                if(!res.data.data.length) this.noOrderList = true
+                this.$apply()
+            }else{
+                if(res.data.data.length){
+                    res.data.data.forEach(element => {
+                        this.orderList.push(element)
+                    });
+                }else{
+                    wx.showToast({title: '已加载全部数据',icon:'none'});
+                }
+            }
+        })
+    }
+}
+</script>
+
+<template lang="wxml">
+    <view class="qwq">
+        <orderGoods :orderList.sync="orderList" :noOrderList.sync="noOrderList"/>
+    </view>
+</template>
+
+<style lang="less">
+</style>

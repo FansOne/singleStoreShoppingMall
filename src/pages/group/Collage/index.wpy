@@ -1,0 +1,106 @@
+<script>
+import wepy from 'wepy';
+import api from '../../../api/api';
+import collageItem from '../../../components/collegeIndexItem'
+
+export default class index extends wepy.page {
+    config = {
+        navigationBarTitleText: '拼团'	
+    }
+    components = {
+        collageItem:collageItem
+    };
+
+    data = {
+        //主页数据
+        mockIndexData:[],
+        payMessage:{},
+    };
+    methods = {
+    };
+    onLoad() {
+        this.userId = wx.getStorageSync('userId')
+        this.payMessage = wepy.$instance.globalData.payMessage
+        let loginFlag = wx.getStorageSync('skey');
+        if (!this.userId || !loginFlag.length) {
+            let that = this;
+            wx.login({
+                success: (res)=> {
+                    const url = api.apiMall + '/third/getSessionKey';
+                    const url_openLogin = api.apiMall + '/index/openLogin';
+                    const data = {
+                    code: res.code,
+                    thirdAppId: this.payMessage.thirdAppId
+                    };
+                    wx.request({
+                    url: url,
+                    data: data,
+                    method: 'POST',
+                    success: res => {
+                        // console.log(res)
+                        wx.setStorage({
+                        key:'skey',
+                        data: res.data.session_key
+                        })
+                        wx.setStorage({
+                        key: 'openid',
+                        data: res.data.results.openid
+                        });
+                        wx.request({
+                        url: url_openLogin,
+                        data: {
+                            openId: res.data.results.openid,
+                            merchantId:  wepy.$instance.globalData.payMessage.merchantId
+                        },
+                        method: 'POST',
+                        success: res => {
+                            wepy.$instance.globalData.avatar = res.data.userInfo.avatar
+                            wepy.$instance.globalData.userId = res.data.userInfo.id
+                            wepy.$instance.globalData.nickname = res.data.userInfo.nickname
+                            wx.setStorage({
+                            key:'userId',
+                            data: res.data.userInfo.id
+                            })
+                        }
+                        });
+                    }
+                    });
+                }
+            })
+        }
+        this.group()
+    };
+    //拼团首页数据
+    group(){
+        const url = api.apiMall + '/group/index';
+        const data = {
+            merchantId: wepy.$instance.globalData.payMessage.merchantId
+        };
+        wepy.request({
+            url: url,
+            method: 'POST',
+            data: data,
+        }).then((res)=>{
+            res.data.data.forEach(element => {
+                element.price = Number(element.price/100).toFixed(2)
+                element.sell = Number(element.sell/100).toFixed(2)
+            });
+            this.mockIndexData = res.data.data;
+            this.$apply()
+        })
+    }
+}
+</script>
+
+<template>
+    <view class='container'>
+        <!-- 商品组件 -->
+        <collageItem :syncTitle.sync="mockIndexData"/>
+    </view>
+</template>
+
+<style lang="less">
+    page{
+        background-color: #fff;
+    }
+</style>

@@ -1,0 +1,741 @@
+<style lang="less">
+  page{
+    width:100%;
+    height:100%;
+    background-color:#fff;
+    border:2rpx solid #f3f3f3;
+    box-sizing:border-box;
+    position:relative;
+  }
+  .first {
+    width:70rpx;
+    height:70rpx;
+    border-radius:50%;
+    text-align:center;
+    line-height:70rpx;
+    background-color:#ffd265;
+    margin:50rpx auto;
+    font-size:28rpx;
+    color:#333;
+  }
+  .header{
+    width:100%;
+    height:275rpx;
+    background-color:#fff;
+    margin:auto;
+    border-radius: 6rpx;
+    position:relative;
+    // padding-top:40rpx;
+    box-sizing:border-box;
+    .header-profile{
+      display:inline-block;
+      width:110rpx;
+      height:110rpx;
+      margin-left:32rpx;
+      border-radius:6rpx;
+      margin-top:25rpx;
+    }
+    .title{
+      width:400rpx;
+      display:inline-block;
+      vertical-align: top;
+      font-weight:bold;
+      font-size:34rpx;
+      color:#333;
+      margin-left:30rpx;
+      margin-top:53rpx;
+      overflow: hidden;
+      text-overflow:ellipsis;
+      white-space: nowrap;
+    }
+    .time{
+      display:inline-block;
+      float:right;
+      margin-right:32rpx;
+      margin-top:52rpx;
+      width:70rpx;
+      font-size: 26rpx;
+      line-height:50rpx;
+      color:#333;
+      font-weight:normal;
+      position:relative;
+      .isPlaybtn{
+        width:120rpx;
+        height:50rpx;
+        float:right;
+        margin-bottom:16rpx;
+        background-color:#ffd265;
+        border-radius:8rpx;
+        font-size:26rpx;
+        color:#333;
+        text-align:center;
+        line-height:50rpx;
+      }
+      .text{
+        position:absolute;
+        right:32rpx;
+        top:112rpx;
+      }
+      .collection{
+        display:block;
+        width:35rpx;
+        height:35rpx;
+        position:absolute;
+        right:170rpx;
+        top:8rpx;
+      }
+    }
+  }
+  .telephone,.address{
+    width:685rpx;
+    height:35rpx;
+    position:absolute;
+    bottom:70rpx;
+    left:0;
+    right:0;
+    line-height:35rpx;
+    margin:auto;
+    .tele-icon{
+      display:block;
+      width:35rpx;
+      height:35rpx;
+      float:left;
+      margin-right:25rpx;
+      margin-top:2rpx;
+    }
+    .address-icon{
+      display:block;
+      width:35rpx;
+      height:35rpx;
+      float:left;
+      margin-right:25rpx;
+    }
+    text{
+      display:block;
+      float:left;
+      font-size: 26rpx;
+      color:#333;
+    }
+    .arrow{
+      display:block;
+      width:15rpx;
+      height:22rpx;
+      float:right;
+      margin-top:6rpx;
+    }
+  }
+  .address{
+    bottom:20rpx;
+  }
+  .content-wrap{
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    border-radius: 6rpx;
+    margin:0rpx auto;
+    padding-bottom:20rpx;
+    box-sizing:border-box;
+    .swiper-tab{
+      width: 100%;
+      text-align: left;
+      // line-height: 80rpx;
+      font-size: 14px;
+      border-top:2rpx solid #fff;
+      padding-left:20rpx;
+      box-sizing:border-box;
+      .shop-introduce{
+        width:183rpx;
+        height:44rpx;
+        margin-top:30rpx;
+      }
+    }
+    .shop-wrap{
+      width:720rpx;
+      height:auto;
+      margin:10rpx auto 0;
+      .sold-list-head{
+        width:100%;
+        height:80rpx;
+        padding :0 20rpx;
+        box-sizing:border-box;
+        .image{
+          display:inline-block;
+          width:6rpx;
+          height:40rpx;
+          background-color:#ffd265;
+          margin-top:20rpx;
+          margin-right:20rpx;
+        }
+        view{
+          display:inline-block;
+          height:100%;
+          line-height:80rpx;
+          font-size:30rpx;
+          color:#333;
+          vertical-align: top;
+        }
+      }
+      .content{
+        text-align:center;
+        width:100%;
+        height:auto;
+        margin:10rpx auto;
+        font-size: 28rpx;
+        color:#333;
+      }
+      .image{
+        display:block;
+        width:616rpx;
+        height:280rpx;
+        margin:10rpx auto;
+      }
+    }
+  }
+  .comment-wrap{
+    width:685rpx;
+    height:auto;
+    margin:20rpx auto;
+    color:#333;
+    overflow: hidden;
+    .profile{
+      width:100%;
+      height:60rpx;
+      image{
+        display:block;
+        vertical-align: top;
+        width:60rpx;
+        height:60rpx;
+        border-radius:50%;
+        float:left;
+        margin-right:20rpx;
+        margin-top:0;
+      }
+      .name{
+        height:100%;
+        float:left;
+        font-size: 28rpx;
+        line-height:60rpx;
+      }
+      .time{
+        height:100%;
+        float:right;
+        color: #969696;
+        font-size: 22rpx;
+        line-height:60rpx;
+      }
+    }
+    .comment-show{
+      width:605rpx;
+      height:auto;
+      float:right;
+      .star{
+        width:150rpx;
+        height:21rpx;
+        position:relative;
+      }
+      .content{
+        width:100%;
+        height:auto;
+        font-size: 26rpx;
+        color:#333;
+      }
+    }
+  }
+  .center{
+    display:block;
+    width:113rpx;
+    height:92rpx;
+    position:absolute;
+    bottom:45rpx;
+    left:0;
+    right:0;
+    margin:auto;
+  }
+  .checkImg{
+    position: absolute;
+    right: 24rpx;
+    top: 80rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    box-shadow: 0 5rpx 10rpx #D3D3D3;
+    width: 140rpx;
+    height: 150rpx;
+    background-color: #fff;
+    border-radius: 50% 50% 0 0;
+    transform: rotate(15deg);
+    z-index:1000;
+    .maidan-text{
+      background-image: -webkit-linear-gradient(left,blue,#66ffff 10%,#cc00ff 20%,#CC00CC 30%, #CCCCFF 40%, #00FFFF 50%,#CCCCFF 60%,#CC00CC 70%,#CC00FF 80%,#66FFFF 90%,blue 100%);
+      -webkit-text-fill-color: transparent;/* 将字体设置成透明色 */
+      -webkit-background-clip: text;/* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
+      -webkit-background-size: 200% 100%;
+      -webkit-animation: masked-animation 8s linear infinite;
+      color: #333;
+      text-align: center;
+      font-size: 28rpx;
+      letter-spacing: 5rpx;
+      font-weight: bold;
+      padding-top: 5rpx;
+      box-sizing:border-box;
+    }
+    @keyframes masked-animation {
+      0% {
+        background-position: 0  0;
+      }
+      100% {
+        background-position: -100%  0;
+      }
+    }
+    image{
+      width: 90rpx;
+      height: 90rpx;
+      margin-left: 27rpx;
+    }
+  }
+  .star-image{
+    position: absolute;
+    top: 0rpx;
+    width: 28rpx;
+    height: 28rpx;
+  }
+  .item{
+    position: absolute;
+    top: 0rpx;
+    width: 28rpx;
+    height: 28rpx;
+  }
+  .page-swiper-wrap{
+    width:100%;
+    height:400rpx;
+    swiper{
+      width:100%;
+      height:100%;
+      .slide-image{
+        width:100%;
+        height:100%;
+      }
+    }
+  }
+  .pay-food-deliver-box{
+    box-sizing:border-box;
+    width:100%;
+    padding: 15rpx 40rpx 0 40rpx;
+    margin-bottom: 15rpx;
+    .pay-food-deliver-flex{
+      box-sizing:border-box;
+      width: 100%;
+      height:165rpx;
+      background-color:#fff;
+      box-shadow: 0px 6rpx 27rpx 0px rgba(0, 0, 0, 0.12);
+      border-radius: 6rpx;
+      display:flex;
+      justify-content: space-around;
+      align-items: center;
+      .item1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size:22rpx;
+        color:#333;
+        image{
+          width:82rpx;
+          height:82rpx;
+        }
+        view{
+          font-size:25rpx;
+        }
+      }
+    }
+  }
+  .swiperShare{
+    position: fixed;
+    top: 200rpx;
+  }
+</style>
+<template>
+  <view id="index">
+    <view class="header-wrap">
+      <!-- 轮播图 -->
+      <view class="page-swiper-wrap">
+        <swiper autoplay circular>
+          <block wx:for="{{imgUrls}}" wx:key="index">
+            <swiper-item>
+              <moreFormId><image mode="widthFix" src="{{item.imagePath}}" class="slide-image" width="355" height="150"/></moreFormId>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      <view class="header">
+        <image class="header-profile" src="{{allData.Merchant_baseInfo.mLogo}}" />
+        <view class="title">{{allData.Merchant_baseInfo.mName}}</view>
+        <view class="time">
+          <view class="isPlaybtn" style="display:block;" wx:if="{{allData.Merchant_baseInfo.open == 0}}">营业中</view>
+          <view class="isPlaybtn" style="background-color:#999;color:#fff;display:block;" wx:if="{{allData.Merchant_baseInfo.open == 1}}">休息中</view>
+          <!-- <view class="text" style="font-size:26rpx;">{{allData.Merchant_baseInfo.startTime}} - {{allData.Merchant_baseInfo.endTime}}</view> -->
+          <!-- <image class="collection" @tap.stop="collection" src="{{dianXin?'http://applet.qumatou.com.cn/static/shop/心.png':'http://applet.qumatou.com.cn/static/shop/k心.png'}}"/> -->
+        </view>
+        <!-- no problem -->
+        <view class="telephone" @tap.stop="phoneCall">
+          <image class="tele-icon" src="http://www.qumatou.com.cn/zheng/xcximage/phoneIcon.png"></image>
+          <text>联系电话：{{allData.Merchant_baseInfo.conPhone}}</text>
+        </view>
+        <view class="address" @tap.stop="address">
+          <image class="address-icon" src="http://www.qumatou.com.cn/zheng/xcximage/addressIcon.png"></image>
+          <text style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;overflow: hidden;">{{allData.Merchant_baseInfo.address}}</text>
+        </view>
+        <!-- 分享 -->
+        <view wx:if='{{shareStatus}}' class='swiperShare' @tap='shareFriends'>
+            <icon class='iconfont icon-fenxiang'/>
+            <view>分享</view>
+        </view>
+      </view>
+    </view>
+    <!-- 买单等模块 -->
+    <view class="pay-food-deliver-box">
+        <view class="pay-food-deliver-flex">
+          <!-- merchantFunction -->
+          <view class="item1" wx:for='{{merchantFunction}}' wx:key='' @tap='merchantFunPageJump({{item.id}})'>
+            <moreFormId><image src="{{item.logo}}" /></moreFormId>
+            <view>{{item.name}}</view>
+          </view>
+        </view>
+    </view>
+    <!-- 拼团 -->
+    <view class="shopIntroduce-box"  @tap.stop='goGroup' wx:if="{{mockIndexData.length != 0}}">
+      <view class='shopIntroduce_title'><image src='http://applet.qumatou.com.cn/static/shop/本店拼好货.png'/><view @tap='goGroup'>更多 ></view></view>
+        <!-- 商品组件 -->
+      <collageItem :syncTitle.sync="mockIndexData"/>
+    </view>
+    <!-- 商家简介 -->
+    <view class="content-wrap">
+      <view class="swiper-tab">
+        <image class="shop-introduce" src="../../images/shop-info.png"/>
+      </view>
+      <!-- 商家介绍 -->
+      <view class="shop-wrap">
+          <block wx:for='{{longBanner}}' wx:key=''>
+              <image src='{{item}}' mode='widthFix' style='width:100%;display:block' lazy-load/>
+          </block>
+      </view>
+    </view>
+    <!-- 遮罩 -->
+		<view class='mask' hidden='{{maskFlag}}'></view>
+    <!-- 分享朋友圈 -->
+		<view class="shareFriends {{shareShow?'shareShow':''}}">
+			<view class='shareFriendsBtn'>
+				<button open-type='share'><image style="width:128rpx;" src='http://sttfv1jm7n.cdhttp.cn/zheng/xcximage/shareFriend.png'/></button>
+				<button @tap = 'sharequan'><image src='http://sttfv1jm7n.cdhttp.cn/zheng/xcximage/shareCircle.png'/></button>
+			</view>
+			<view class='shareFriendsCancel' @tap='shareFriends'>关闭</view>
+		</view>
+		<!-- 海报 -->
+		<view class="haiBao {{haobaoShow?'':'haobaoShow'}}" hidden='{{haobaoShow}}'>
+			<image src='{{haiBaoImg}}' @tap='previewImage({{haiBaoImg}})'/>
+			<button @tap='saveImg({{haiBaoImg}})'>保存至相册</button>
+			<view>分享朋友圈时可在相册选取图片</view>
+			<view class='close' @tap='closeHaiBao'>×</view>
+		</view>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  import requestUrl from '../../api/requestUrl'
+  import { requestData } from '../../api/requestData'
+  import commentStarShow from '../../components/commentStarShow'
+  import collageItem from '../../components/collegeIndexItem'
+  import moreFormId from '../../components/moreFormId'
+  import util from '../../utils/util'
+  export default class New extends wepy.page {
+    config = {
+        backgroundTextStyle: 'light',
+        navigationBarBackgroundColor: '#ffd265',
+        navigationBarTitleText: '首页',
+        navigationBarTextStyle: 'black',
+        enablePullDownRefresh:true,
+        backgroundTextStyle:'dark'
+    }
+    components = {
+        commentStarShow,
+        collageItem,
+        moreFormId
+    }
+    data = {
+      maskFlag:true,
+      allData:{},
+      haiBaoImg:'',
+      shareStatus:false,
+      arrUrlGroup:[],
+      longBanner:[],
+      merchantFunction:[],  //商家开通功能
+      shareShow:false,
+      haobaoShow:true,
+      imgUrls:{},
+      tel:'',
+      mockIndexData:[],
+      syncTitle:0,
+      business:'block',
+      rest:'none',
+      extConfig:null,
+      stars: [0, 1, 2, 3, 4],
+      normalSrc: 'http://www.qumatou.com.cn/zheng/xcximage/star.png',
+      selectedSrc: 'http://www.qumatou.com.cn/zheng/xcximage/starWhole.png',
+      key: 0,
+      location:null,
+      results:null,
+      pictures:[],
+      comments:[],
+      type:2,
+      fontFamily:'Bitstream Vera Serif Bold'
+    }
+    methods = {
+      // 根据id跳转商户开通功能页面
+      merchantFunPageJump(id){
+        if(id == 1){  //买单
+          wx.navigateTo({
+              url: `../inputValue?title=${this.allData.Merchant_baseInfo.mName}&m_id=${wepy.$instance.globalData.PidMid.m_id}`
+          });
+        }else if(id == 2 || id == 5){ //进入门店
+        // m_TranType 0 买单 1 自营商品下单 2-代购代销产品 3-外卖产品
+          wepy.$instance.globalData.localSpecialty = ''
+          wx.switchTab({
+            url: `./shoppingMall/index`
+          });
+        }else if(id == 3){  //本地特产
+          wepy.$instance.globalData.localSpecialty = 2
+          wx.switchTab({
+            // m_TranType 0 买单 1 自营商品下单 2-代购代销产品 3-外卖产品
+            url: `./shoppingMall/index`
+          });
+        }else if(id == 4){ //外卖
+          wx.navigateTo({
+            url:`./deliver/deliver?m_id=${wepy.$instance.globalData.PidMid.m_id}`,
+            success : ()=>{
+              wepy.$instance.globalData.takeOutStatus = 2
+            }
+          }) 
+        }
+      },
+      //拨打电话
+      phoneCall (){
+        wx.makePhoneCall({
+          phoneNumber: this.allData.Merchant_baseInfo.conPhone
+        })
+      },
+      // 跳转地图
+      address(){
+        wx.openLocation({
+          latitude: Number(this.allData.Merchant_baseInfo.latitude),
+          longitude: Number(this.allData.Merchant_baseInfo.longitude),
+          name: this.allData.Merchant_baseInfo.mName
+        })
+      },
+      shareFriends(){
+          this.shareShow = !this.shareShow
+          this.maskFlag = !this.maskFlag
+      },
+      // 积分商城
+      // goIntegralMall(){
+      //     wx.getStorage({
+      //       key: 'token',
+      //       success: res => {
+      //         wx.navigateTo({
+      //             url: '../../packageMembershipCard/IntegralMall/index'
+      //         });
+      //       },fail:()=>{
+      //         wx.navigateTo({
+      //             url: '../login'
+      //         });
+      //       }
+      //     });
+      // },
+      // 积分抽奖
+      // luckDrawIndex(){
+      //   wx.getStorage({
+      //     key: 'token',
+      //     success: res => {
+      //       wx.navigateTo({
+      //         url: '../../packageMembershipCard/integralManagement/luckDrawIndex'
+      //       });
+      //     },fail:()=>{
+      //       wx.navigateTo({
+      //           url: '../login'
+      //       });
+      //     }
+      //   })
+      // }
+      previewImage(haiBaoImg){
+        wx.previewImage({
+          urls: [`${haiBaoImg}`] // 需要预览的图片http链接列表
+        })
+      },
+      //发朋友圈
+      sharequan(){
+          wx.showLoading({title: '海报生成中...'});
+          this.maskFlag = false
+          this.haobaoShow = false;
+          //  请求图片链接
+          let data ={
+              p_id : wepy.$instance.globalData.PidMid.p_id,
+              m_id : wepy.$instance.globalData.PidMid.m_id,
+              type : 0,//0-商户首页 1-平台首页 2-产品转发 5-大学生 6-贫困户 7-农户
+              ponlyid : ''
+          };
+          requestData(requestUrl.getMerchantCode,'POST',data).then(res=>{
+              wx.hideLoading();
+              this.haiBaoImg = res.data.data.URL
+              this.$apply()
+          })
+      },
+      // 保存图片至相册
+      saveImg(imgUrl){
+          wx.downloadFile({
+              url: imgUrl,
+              success: (res)=>{
+                  // console.log(res)
+                  wx.saveImageToPhotosAlbum({
+                      filePath: res.tempFilePath,
+                      success: (data)=>{
+                          this.shareShow = false
+                          this.haobaoShow = true
+                          this.maskFlag = true
+                          this.$apply()
+                          wx.showToast({
+                              title: '保存成功',
+                              icon: 'success',
+                              duration: 2000
+                          });
+                      },
+                      fail: (err)=>{
+                          wx.showModal({
+                              title: '授权提示',
+                              content: '您已拒绝访问相册授权，如需将图片保存至相册请点击‘确定’以获取用户授权设置',
+                              showCancel: true,
+                              cancelText: '取消',
+                              cancelColor: '#000000',
+                              confirmText: '确定',
+                              confirmColor: '#3CC51F',
+                              success: res => {
+                                  if(res.confirm){
+                                      wx.openSetting({
+                                          success:(res)=>{
+                                              if(res.authSetting['scope.writePhotosAlbum']){
+                                                  wx.showToast({title: '授权成功，请重新保存',icon: 'none'});
+                                              }
+                                          }
+                                      })
+                                  }
+                              }
+                          });
+                      }
+                  });
+              }
+          });
+      },
+      closeHaiBao(){
+          this.haobaoShow = true;
+          this.$apply()
+      },
+    }
+    // 请求商户数据
+    async getShopDetail(){
+      const url = requestUrl.MerchantInfo
+        const data = {
+            p_id  : wepy.$instance.globalData.PidMid.p_id,
+            m_id  : wepy.$instance.globalData.PidMid.m_id,
+            token : wx.getStorageSync('token')
+        }
+        wepy.request({
+            url: url,
+            method: 'POST',
+            data: data,
+        }).then((res)=>{
+            wx.setNavigationBarTitle({ title: '首页' })
+            wx.hideNavigationBarLoading()
+            console.log(res.data.data.Merchant_baseInfo.Mabstractpath)
+            this.longBanner = res.data.data.Merchant_baseInfo.Mabstractpath.split(';').slice(0,-1);
+            this.topCover = true
+            this.imgUrls = res.data.data.Merchant_Banner;
+            this.allData = res.data.data;
+            if(res.data.data.Merchant_baseInfo.open == 0){
+                //shoppStatus == 0 营业
+                this.shoppStatus = true;
+            }else{
+                this.shoppStatus = false;
+            }
+            //将起送费保存到storage中
+            wx.setStorage({
+                key:'sendPrice',
+                data:res.data.data.Merchant_baseInfo.sendPrice
+            })
+            //将配送费保存到storage中
+            wx.setStorage({
+                key:'normalsend',
+                data:res.data.data.Merchant_baseInfo.normalsend
+            })
+            this.$apply();
+        }).catch((res)=>{
+            wx.showToast({ title: '网络异常，请重试',icon:'none'})
+        })
+    }
+    //获取商户开通功能列表
+    merchantF(){
+      let url = requestUrl.merchantFunction;
+      let data = { m_id: wepy.$instance.globalData.PidMid.m_id }
+      let merchantFunction = [];
+      requestData(url,'POST',data).then(res=>{
+          res.data.data.forEach(element => {
+             if(element.name == '外卖') wepy.$instance.globalData.merchantTackOut = 'isMerchantTackOut'
+             if(element.id == 5){
+               this.shareStatus = true
+             }else{
+               merchantFunction.push(element)
+             }
+          });
+          this.merchantFunction = merchantFunction
+          this.$apply()
+      })
+    }
+    //设置转发
+    onShareAppMessage(res){
+      return {
+        title: '堂食点餐小程序',
+        path: '/pages/index/index',
+        success:(res=>{
+          if(res){
+            wx.showToast({
+              title: '转发成功',
+              icon: 'success',
+              duration: 1000
+            })
+          }
+        }),
+        fail:(res=>{
+          wx.showToast({
+            title: '转发失败',
+            image:'../../images/warning.png',
+            duration: 1000
+          })
+        })
+      }
+    }
+    onLoad(options){
+      //店铺详情
+      this.getShopDetail();
+      this.merchantF()
+      //通过扫码可以拿到桌号，将桌号保存到optionsData中
+      let optionsData = options;
+      // let optionsData = {deskop:options.n||'无桌号',tableNum: 1};  //测试有桌号点餐
+      wx.setStorage({ key:'optionsData',data:optionsData })
+      if(Object.keys(optionsData).length != 0){
+        this.type = 1; //扫码点餐
+      }else{
+        this.type = 2;  //正常启动
+      }
+      //将桌号和用餐人数保存到缓存中
+      let data = {socketTableNum: Object.keys(optionsData).length != 0 ? optionsData.n : 0 ,tableNum: 1};
+      // let data = {socketTableNum:1,tableNum: 1};  //测试有桌号点餐
+      wx.setStorage({ key:"data",data:data })
+    }
+  }
+</script>

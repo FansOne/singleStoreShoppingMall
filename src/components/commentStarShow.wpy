@@ -1,0 +1,45 @@
+<style type="less">
+  .star-image{
+    position: absolute;
+    top: 0rpx;
+    width: 28rpx;
+    height: 28rpx;
+    src: "../images/star.png";
+  }
+  .item{
+    position: absolute;
+    top: 0rpx;
+    width: 28rpx;
+    height: 28rpx;
+  }
+
+</style>
+<template>
+  <view class = 'startBox'>
+    <block wx:for="{{stars}}" wx:key='idx' >
+      <image class="star-image" style="left: {{item*30}}rpx;" src="{{syncTitle > item ?selectedSrc : normalSrc}}">
+        <view class="item" style="left:0rpx" data-key="{{item+0.5}}"></view>
+        <view class="item" style="left:25rpx" data-key="{{item+1}}"></view>
+      </image>
+    </block>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  let count = 0
+  export default class Commentstarshow extends wepy.component {
+    props = {
+      // 父向子单向动态传值
+      syncTitle: {
+        type: Number,
+        default: '3'
+      }
+    }
+    data = {
+      stars: [0, 1, 2, 3, 4],
+      normalSrc: 'http://www.qumatou.com.cn/zheng/xcximage/star.png',
+      selectedSrc: 'http://www.qumatou.com.cn/zheng/xcximage/starWhole.png',
+      key: 0,
+    }
+  }
+</script>

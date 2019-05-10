@@ -1,0 +1,79 @@
+<style lang="less">
+  page{
+    width:100%;
+    height:100%;
+    background-color:#f3f3f3;
+    padding-top:20rpx;
+    box-sizing:border-box;
+  }
+  .tips-wrap{
+    width:710rpx;
+    height:520rpx;
+    background-color:#fff;
+    border-radius:6rpx;
+    margin:0 auto;
+    color:#333;
+    padding:20rpx 30rpx;
+    box-sizing:border-box;
+    .title{
+      font-size:30rpx;
+      margin-bottom:15rpx;
+    }
+    .input{
+      display:block;
+      width:100%;
+      height:300rpx;
+      border:2rpx solid #eee;
+      background-color:#ececec;
+      font-size:30rpx;
+      padding:15rpx 20rpx;
+      box-sizing:border-box;
+    }
+    .sure{
+      width:100%;
+      height:82rpx;
+      background-color:#ffd265;
+      font-size:30rpx;
+      text-align:center;
+      line-height:82rpx;
+      border-radius:6rpx;
+      margin-top:30rpx;
+    }
+  }
+</style>
+<template>
+  <view id="tips">
+    <view class="tips-wrap">
+      <view class="title">备注信息</view>
+      <textarea class="input" placeholder="请输入备注信息(可不填)" placeholder-style="color:#969696;" @input="tips" />
+      <view class="sure" @tap.stop="getInfo">确定</view>
+    </view>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+
+  export default class Tips extends wepy.page {
+    config = {
+      navigationBarTitleText: '订单备注'
+    }
+    data = {
+      tips:''   //订单备注
+    }
+    components = {
+    }
+    methods = {
+      // 获取备注信息
+      tips(e){
+        this.tips = e.detail.value;
+      },
+      //点击确定
+      getInfo(){
+        wepy.$instance.globalData.takeOutTips = this.tips;
+        wx.navigateBack({
+          delta: 1
+        })
+      }
+    }
+  }
+</script>

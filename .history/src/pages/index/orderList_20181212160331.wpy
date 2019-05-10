@@ -1,0 +1,732 @@
+<style lang="less">
+  page{
+    width:100%;
+    height:100%;
+    background-color:#f3f3f3;
+  }
+  .header-wrap{
+    width:100%;
+    height:auto;
+    background-color:#fff;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:100000;
+    .header-words{
+      display:flex;
+      view{
+        flex:1;
+        height:80rpx;
+        line-height:80rpx;
+        text-align:center;
+        font-size:28rpx;
+        color:grey;
+        box-sizing:border-box;
+        justify-content: space-between;
+        text{
+          display:inline-block;
+          height:100%;
+        }
+        .text{
+          border-bottom:4rpx solid #333;
+          color:#333;
+          box-sizing:border-box;
+        }
+      }
+    }
+  }
+  // 堂食订单
+   .orer-list-wrap{
+    width:710rpx;
+    height:auto;
+    background-color:#fff;
+    margin:0 auto;
+    padding: 0 20rpx;
+    box-sizing:border-box;
+  }
+  .sold-list-head{
+    width:100%;
+    height:80rpx;
+    /*background-color:cyan;*/
+    border-bottom:2rpx solid #f3f3f3;
+    image{
+      display:inline-block;
+      width:6rpx;
+      height:40rpx;
+      background-color:#ffd265;
+      margin-top:20rpx;
+      margin-right:20rpx;
+    }
+    view{
+      display:inline-block;
+      height:100%;
+      line-height:80rpx;
+      font-size:30rpx;
+      font-weight:bold;
+      color:#333;
+      vertical-align: top;
+    }
+  }
+  /*订单的主要内容*/
+  .order-content-wrap{
+    height:290rpx;
+    border-bottom:2rpx solid #f3f3f3;
+    margin-top:38rpx;
+    padding-bottom:30rpx;
+    box-sizing:border-box;
+    .shop-name-wrap{
+      height:60rpx;
+      view{
+        float:left;
+        font-size:32rpx;
+        color:#333;
+      }
+    }
+    .order-status{
+      float:right;
+      font-size:28rpx;
+    }
+    .profile{
+      display:inline-block;
+      width:120rpx;
+      height:120rpx;
+    }
+    .order{
+      display:inline-block;
+      float:right;
+      vertical-align: top;
+      width:75%;
+      height:auto;
+    }
+    .order-time{
+      float:left;
+      color: #969696;
+      font-size:22rpx;
+      margin-bottom:30rpx;
+    }
+    .comment{
+      height:60rpx;
+      color:#333;
+      font-size:28rpx;
+      view{
+        float:right;
+        margin-left:40rpx;
+        vertical-align: top;
+        width: 150rpx;
+        height: 60rpx;
+        background-color: #ffffff;
+        border-radius: 6rpx;
+        border: solid 2rpx #ffd265;
+        text-align:center;
+        line-height:60rpx;
+      }
+      .more-order{
+        background-color: #ffd265;
+      }
+    }
+  }
+  .noneOrder{
+    width:100%;
+    height:30rpx;
+    font-size:30rpx;
+    position:absolute;
+    top:0;
+    bottom:0;
+    margin:auto;
+    text-align:center;
+    color:#969696;
+  }
+  .noneMoreOrderList{
+    width:100%;
+    height:80rpx;
+    background-color:#fff;
+    font-size:30rpx;
+    text-align:center;
+    line-height:80rpx;
+  }
+  .update-food-orderlist{
+    width:100%;
+    height:100%;
+  }
+  .update-deliver-orderlist{
+    width:100%;
+    height:100%;
+  }
+  .authorize{
+    width:160rpx;
+    padding:12rpx 0;
+    background-color:#ffd265;
+    font-size:26rpx;
+    text-align:center;
+    border-radius:6rpx;
+    position:absolute;
+    left:0;
+    right:0;
+    top:450rpx;
+    margin:auto;
+  }
+  button::after{
+    border:none;
+  }
+</style>
+<template>
+  <view id="comments" style="width:100%;height:100%;padding-top:80rpx;box-sizing:border-box;">
+    <view style="width:100%;height:100%;display:{{noInfoHide}}">
+      <view class="header-wrap" id="header">
+        <view class="header-words">
+          <view @tap.stop="foodsOrder">
+            <text class="{{index == 1 ? 'text' : ''}}">堂食订单</text>
+          </view>
+          <view @tap.stop="deliverOrder">
+            <text class="{{index == 2 ? 'text' : ''}}">外卖订单</text>
+          </view>
+          <view @tap.stop="groupOrder" >
+            <text class="{{index == 3 ? 'text' : ''}}">拼团订单</text>
+          </view>
+          <view @tap.stop="shoppingMallOrder" >
+            <text class="{{index == 4 ? 'text' : ''}}">商城订单</text>
+          </view>
+        </view>
+      </view>
+      <!-- 订单列表 -->
+      <view class="update-food-orderlist" style="display:{{updateFoodOrderlist}}">
+        <scroll-view scroll-y @scrolltolower="foodRefresh" style="display:block;width:100%;height:100%;display:flex;">
+          <view style="width:100%;height:auto;background-color:#fff;display:{{foodOrderList.length != 0 ? 'block' : 'none'}}">
+            <view class="orer-list-wrap">
+              <view class="sold-list-head">
+                <image/>
+                <view>全部订单</view>
+              </view>
+              <view class="order-content-wrap" data-id="{{item.id}}" data-type="{{item.ordertype}}" wx:for="{{foodOrderList}}" wx:for-item="item" wx:key="index" @tap="foodOrderDetail">
+                <view class="shop-name-wrap">
+                  <view>订单编号: {{item.serial}}</view>
+                  <view class="order-status" style="float:right;" wx:if="{{item.status == 1}}">已完成</view>
+                </view>
+                <image class="profile" src="{{item.ordertype == 1 ? item.good.cart[0].cover : item.good.cover}}"></image>
+                <view class="order">
+                  <view class="shop-name-wrap">
+                    <view>{{item.good.title}}等{{item.count}}件商品</view>
+                  </view>
+                  <view style="width:100%;height:30rpx;">
+                    <view class="order-time">{{item.dateline}}</view>
+                    <view class="order-status">￥{{item.total}}</view>
+                  </view>
+                </view>
+                <view class="comment">
+                  <view class="more-order" @tap.stop="foodMoreOrder">再来一单</view>
+                  <view wx:if="{{item.status == 1}}" @tap.stop="foodComment" data-id="{{item.id}}">我要评价</view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="noneOrder" style="display:{{foodOrderList.length != 0 ? 'none' : 'block'}}">您还没有订单哦!</view>
+        </scroll-view>
+      </view>
+      <!-- 外卖订单 -->
+      <view class="update-deliver-orderlist" style="display:{{updateDeliverOrderlist}}">
+        <scroll-view scroll-y @scrolltolower="deliverRefresh" style="display:block;width:100%;height:100%;display:flex;">
+          <view style="width:100%;height:auto;margin:auto;background-color:#fff;display:{{orderList.length != 0 ? 'block' : 'none'}}">
+            <view class="orer-list-wrap">
+              <view class="sold-list-head">
+                <image/>
+                <view>全部订单</view>
+              </view>
+              <view class="order-content-wrap" data-status="{{item.status}}" data-id="{{item.id}}" data-sendtype="{{item.sendtype}}" wx:for="{{orderList}}" wx:for-item="item" wx:key="index" @tap.stop="orderDetail">
+                <view class="shop-name-wrap">
+                  <view>订单编号: {{item.serial}}</view>
+                  <view class="order-status" style="float:right;">{{item.orderStatus}}</view>
+                </view>
+                <image class="profile" src="{{item.ordertype == 1 ? item.good.cart[0].cover : item.good.cover}}"></image>
+                <view class="order">
+                  <view class="shop-name-wrap">
+                    <view>{{item.good.title}}等{{item.count}}件商品</view>
+                  </view>
+                  <view style="width:100%;height:30rpx;">
+                    <view class="order-time">{{item.dateline}}</view>
+                    <view class="order-status">￥{{item.paytotal}}</view>
+                  </view>
+                </view>
+                <view class="comment">
+                  <view class="more-order" @tap.stop="moreOrder">再来一单</view>
+                  <view wx:if="{{item.status == 3}}" @tap.stop="comment" data-id="{{item.id}}">我要评价</view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="noneOrder" style="display:{{orderList.length != 0 ? 'none' : 'block'}}">您还没有订单哦!</view>
+        </scroll-view>
+      </view>
+      <!-- 拼团订单 -->
+      <view class="update-deliver-orderlist" style="display:{{groupOrder}}">
+        <scroll-view scroll-y @scrolltolower="deliverRefresh" style="display:block;width:100%;height:100%;display:flex;">
+          <view style="width:100%;height:auto;margin:auto;background-color:#fff;display:{{groupOrderList.length != 0 ? 'block' : 'none'}}">
+            <collegeWaiting :syncTitle.sync="collegeWaiting"/>
+          </view>
+          <view class="noneOrder" style="display:{{collegeWaiting.length != 0 ? 'none' :'block'}};">您还没有订单哦!!</view>
+        </scroll-view>
+      </view>
+      <!-- 商城订单 -->
+      <view class="update-deliver-orderlist" style="display:{{mallOrder}}">
+        <scroll-view scroll-y @scrolltolower="deliverRefresh" style="display:block;width:100%;height:100%;display:flex;">
+          <view style="width:100%;height:auto;margin:auto;background-color:#f3f3f3;display:{{groupOrderList.length != 0 ? 'block' : 'none'}}">
+            <view wx:if="{{noBuy}}">
+              <view class="noneOrder" style="display:{{collegeWaiting.length != 0 ? 'none' :'block'}};">您还没有订单哦!!</view>
+            </view>
+            <view wx:else class='allOrder'>
+              <pendingDelivery/>
+              <waitPuy/>
+              <waitCollectGoods/>
+              <orderEvaluate/>
+              <transactionClose/>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+    <!-- 如果没有信息则需要先授权 -->
+    <button class="authorize" @tap.stop="toLogin" style="display:{{loginBtn}}">授权登录</button>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  import api from '../../api/api'
+  import util from '../../utils/util'
+  import app from '../../utils/app'
+  import collegeWaiting from '../../components/collegeWaiting'
+  import pendingDelivery from '../../components/pendingDelivery'
+  import transactionClose from '../../components/transactionClose'
+  import waitPuy from '../../components/waitPuy'
+  import waitCollectGoods from '../../components/waitCollectGoods'
+  import orderEvaluate from '../../components/orderEvaluate'
+
+  export default class Orderlist extends wepy.page {
+    config = {
+      navigationBarTitleText: '订单',
+      enablePullDownRefresh:true,
+      backgroundTextStyle:'dark'
+    }
+    data = {
+      groupShow:true,
+      //拼团组件传入数据
+      collegeWaiting:[],
+      loginBtn:'block',
+      noInfoHide:'none',
+      orderlistHeight:0,          //屏幕的可用高度
+      index:1,
+      updateFoodOrderlist:'block',
+      updateDeliverOrderlist:'none',
+      groupOrder:'none',
+      mallOrder:'none',
+      foodOrderList:null,
+      userId:0,
+      page:1,
+      foodNoneOrder:true,
+      extConfig:null,
+      orderStatusArr:[],     //订单状态
+      orderList:null,
+      allOrderListShow:'none',
+      noneOrder:true,
+      orderStatus:'',    //订单状态
+      noBuy:true,
+      pendingGoods: false,
+      waitPuy:false,
+      waitCollectGoods: false,
+      orderEvaluat: false,
+    }
+    components = {
+      collegeWaiting:collegeWaiting,
+      pendingDelivery: pendingDelivery,
+      transactionClose: transactionClose,
+      waitPuy: waitPuy,
+      waitCollectGoods: waitCollectGoods,
+      orderEvaluate: orderEvaluate
+    }
+    events = {
+      allStaus:()=>{
+        this.noBuy = false
+      },
+      noStaus:(res)=>{
+        if(res == 1){
+          this.waitPuy = true 
+        }else if (res == 2){
+          this.pendingGoods = true
+        }else if (res == 3){
+          this.waitCollectGoods = true
+        }else if (res == 4){
+          this.orderEvaluat = true
+        }
+      }
+    }
+    //下拉刷新
+    onPullDownRefresh(){
+      this.groupShow = true
+      this.$apply()
+      this.groupOrderLists()
+    }
+    // 分享
+    onShareAppMessage(res){
+      let shareInfo = this.collegeWaiting;
+      if (res.from === 'button') {
+        // 来自页面内转发按钮
+        let activityId = res.target.dataset.wpytapstopA;
+        shareInfo.title = '一起拼才划算~'+'【'+shareInfo[activityId].title+'】'+','+'单品优惠'+(shareInfo[activityId].sell-shareInfo[activityId].price)+'元！',
+        shareInfo.path = 'pages/group/Collage/sharingSpells?orderId='+shareInfo[activityId].groupOrderId;
+        shareInfo.imageUrl = shareInfo[activityId].shareCover
+      }
+      return shareInfo
+    };
+    //获取拼团订单列表
+    groupOrderLists(id){
+      wx.request({
+        url: api.apiMall + '/group/orderList',
+        method: 'POST',
+        data: {
+          userId:this.userId || id,
+          merchantId:  wepy.$instance.globalData.payMessage.merchantId
+        },
+        success: (res)=>{
+          let orderLists = res.data.data;
+          this.groupOrderList = res.data.data;
+          orderLists.forEach(element => {
+            element.price = Number(element.price/100).toFixed(2)
+            element.sell = Number(element.sell/100).toFixed(2)
+          });
+          wx.hideLoading()
+          this.collegeWaiting = res.data.data
+          this.groupShow = false
+          this.$apply()
+          wx.stopPullDownRefresh()
+          if(!this.collegeWaiting.length){
+            this.noGroupOrder = false
+            this.$apply()
+          }
+        },
+      });
+    }
+    methods = {
+      //授权登录
+      toLogin(){
+        wx.getStorage({
+          key: 'access_token',
+          success: res => {},
+          fail:res=>{
+            let url = '../login';
+            app.is_skip(url);
+          }
+        });
+      },
+      //触到底部加载更多
+      foodRefresh(){
+        // 显示加载图标
+        wx.showLoading({
+          title: '玩命加载中',
+        })
+        // 页数+1
+        this.page = this.page + 1;
+        const url = api.apiMall + '/food/orderLists';
+        const data = {
+          merchantId:this.extConfig.merchantId,
+          userId:this.userId,
+          page:this.page,
+          count:5
+        }
+        wepy.request({
+          url: url + '?page=' + this.page,
+          method: "POST",
+          data:data
+        }).then((res)=>{
+          const data = res.data;
+          for (var i = 0; i < data.length; i++) {
+            data[i].total = util.keepTwoDecimalFull(data[i].total/100);;
+            this.foodOrderList.push(data[i]);
+          }
+          this.$apply();
+          if(data.length == 0){
+            wx.showToast({
+              title: '没有数据啦',
+              image: '../../images/warning.png',
+              duration: 1000
+            })
+            this.$apply();
+          }
+          // 隐藏加载框
+          wx.hideLoading();
+        })
+      },
+      //外卖加载更多
+      deliverRefresh(){
+        // 显示加载图标
+        wx.showLoading({
+          title: '玩命加载中',
+        })
+        // 页数+1
+        this.page = this.page + 1;
+        const url = api.apiMall + '/takeaway/orderLists';
+        const data = {
+          merchantId:this.extConfig.merchantId,
+          userId:this.userId,
+          page:this.page,
+          count:5,
+          status:''
+        }
+        wepy.request({
+          url: url + '?page=' + this.page,
+          method: "POST",
+          data:data
+        }).then((res)=>{
+          const data = res.data.orderLists;
+          data.forEach((item,index)=>{
+            item.paytotal = util.keepTwoDecimalFull(item.paytotal/100);
+            //判断订单状态
+            if(item.status == 0){
+              item.orderStatus = '待付款'
+            }else if(item.status == 1){
+              item.orderStatus = '已付款'
+            }else if(item.status == 2){
+              item.orderStatus = '已接单'
+            }else if(item.status == 3){
+              item.orderStatus = '待评价'
+            }else if(item.status == 4){
+              item.orderStatus = '已完成'
+            }else if(item.status == 5){
+              item.orderStatus = '申请退款中'
+            }else if(item.status == 6){
+              item.orderStatus = '退款已完成'
+            }else if(item.status == 7){
+              item.orderStatus = '已取消'
+            }
+          })
+          for (let i = 0; i < data.length; i++) {
+            data[i].paytotal = util.keepTwoDecimalFull(data[i].paytotal/100);
+            this.orderList.push(data[i]);
+          }
+          this.$apply();
+          if(data.length == 0){
+            wx.showToast({
+              title: '没有数据啦',
+              image: '../../images/warning.png',
+              duration: 1000
+            })
+            this.$apply();
+          }
+          // 隐藏加载框
+          wx.hideLoading();
+        })
+      },
+      foodsOrder(){
+        this.foodGetOrderList();
+        this.page = 1;
+        this.index = 1;
+        this.updateFoodOrderlist = 'block';
+        this.updateDeliverOrderlist = 'none';
+        this.mallOrder = 'none';
+        this.groupOrder = 'none';
+      },
+      deliverOrder(){
+        this.getOrderList();
+        this.page = 1;
+        this.index = 2;
+        this.updateFoodOrderlist = 'none';
+        this.updateDeliverOrderlist = 'block';
+        this.groupOrder = 'none';
+        this.mallOrder = 'none';
+      },
+      // 商城订单
+      shoppingMallOrder(){
+        this.page = 1;
+        this.index = 4;
+        this.mallOrder = 'block';
+        this.updateFoodOrderlist = 'none';
+        this.updateDeliverOrderlist = 'none';
+        this.groupOrder = 'none';
+      },
+      //拼团订单
+      groupOrder(){
+        wx.showLoading({
+          title: '加载中',
+        })
+        this.page = 1;
+        this.index = 3;
+        this.groupOrder = 'block';
+        this.updateFoodOrderlist = 'none';
+        this.updateDeliverOrderlist = 'none';
+        this.mallOrder = 'none';
+        this.groupOrderLists();
+      },
+      //再来一单
+      foodMoreOrder(){
+        wx.navigateTo({
+          url:'./deliver/deliver'
+        })
+      },
+      // 跳转评价页
+      foodComment(e){
+        wx.navigateTo({
+          url:'./deliver/comment?orderId=' + e.currentTarget.dataset.id
+        })
+      },
+      foodOrderDetail(e){
+        if(e.currentTarget.dataset.type == 1){
+          wx.navigateTo({
+            url:'./deliver/orderDetail?orderId=' + e.currentTarget.dataset.id
+          })
+        }else if(e.currentTarget.dataset.type == 0){
+          wx.navigateTo({
+            url:'./deliver/noneTablenumOrderDetail?orderId=' + e.currentTarget.dataset.id
+          })
+        }
+      },
+      //再来一单
+      moreOrder(){
+        wx.navigateTo({
+          url:'./takeOut/deliver'
+        })
+      },
+      // 跳转评价页
+      comment(e){
+        wx.navigateTo({
+          url:'./takeOut/comment?orderId=' + e.currentTarget.dataset.id
+        })
+      },
+      //跳转订单详情
+      orderDetail(e){
+        let orderStatus = e.currentTarget.dataset.status;
+        let sendType = e.currentTarget.dataset.sendtype;
+        if(orderStatus == 1){
+          if(sendType == 1){
+            //商家配送
+            wx.navigateTo({
+              url:'./takeOut/shopDeliverDetail?orderId=' + e.currentTarget.dataset.id
+            })
+          }
+        }else if(orderStatus == 0){
+          //待付款
+          wx.navigateTo({
+            url:'./takeOut/waitToPayOrderDetail?orderId=' + e.currentTarget.dataset.id
+          })
+        }else if(orderStatus == 7){
+          wx.navigateTo({
+            url:'./takeOut/cancleOrderDetail?orderId=' + e.currentTarget.dataset.id
+          })
+        }else if(orderStatus == 6){
+          wx.navigateTo({
+            url:'./takeOut/refundDetail?orderId=' + e.currentTarget.dataset.id
+          })
+        }else if(orderStatus == 4){
+          wx.navigateTo({
+            url:'./takeOut/orderDoneDetail?orderId=' + e.currentTarget.dataset.id
+          })
+        }else if(orderStatus == 3){
+          wx.navigateTo({
+            url:'./takeOut/orderDoneDetail?orderId=' + e.currentTarget.dataset.id
+          })
+        }else if(orderStatus == 2){
+          wx.navigateTo({
+            url:'./takeOut/orderDone?orderId=' + e.currentTarget.dataset.id
+          })
+        }else if(orderStatus == 1){
+          wx.navigateTo({
+            url:'./takeOut/orderDone?orderId=' + e.currentTarget.dataset.id
+          })
+        }
+      }
+    }
+    //点餐获取订单列表接口
+    async foodGetOrderList(){
+      const url = api.apiMall + '/food/orderLists'
+      const data = {
+        merchantId:this.extConfig.merchantId,
+        userId:this.userId,
+        page:1,
+        count:5
+      }
+      await wepy.request({
+        url: url,
+        method: 'POST',
+        data: data,
+      }).then((res)=>{
+        const data = res.data;
+        this.foodOrderList = data;
+        this.foodOrderList.forEach((item,index)=>{
+          item.total = util.keepTwoDecimalFull(item.total/100);
+        })
+        this.$apply();
+      })
+    }
+    //外卖订单列表
+    async getOrderList(){
+      const url = api.apiMall + '/takeaway/orderLists'
+      const data = {
+        merchantId:this.extConfig.merchantId,
+        userId:this.userId,
+        page:1,
+        count:5,
+        status:''
+      }
+      await wepy.request({
+        url: url,
+        method: 'POST',
+        data: data,
+      }).then((res)=>{
+        const data = res.data;
+        this.orderList = data.orderLists;
+        this.orderList.forEach((item,index)=>{
+          item.paytotal = util.keepTwoDecimalFull(item.paytotal/100);
+          //判断订单状态
+          if(item.status == 0){
+            item.orderStatus = '待付款'
+          }else if(item.status == 1){
+            item.orderStatus = '已付款'
+          }else if(item.status == 2){
+            item.orderStatus = '已接单'
+          }else if(item.status == 3){
+            item.orderStatus = '待评价'
+          }else if(item.status == 4){
+            item.orderStatus = '已完成'
+          }else if(item.status == 5){
+            item.orderStatus = '申请退款中'
+          }else if(item.status == 6){
+            item.orderStatus = '退款已完成'
+          }else if(item.status == 7){
+            item.orderStatus = '已取消'
+          }
+        })
+        this.$apply();
+      })
+    }
+    onShow(){
+      //获取extConfig
+      this.extConfig = wx.getStorageSync("extConfig");
+      this.userId = wx.getStorageSync("userId");
+      this.page = 1;
+      //获取userInfo
+      wx.getStorage({
+        key:'access_token',
+        success:(res=>{
+          this.loginBtn = 'none';
+          this.noInfoHide = 'block';
+          this.$apply();
+        })
+      })
+      if(this.userId){
+        this.foodGetOrderList()
+      }
+      this.$apply();
+    }
+    onRoute(){
+      //获取extConfig
+      this.extConfig = wx.getStorageSync("extConfig");
+      wx.showToast({
+        title: '正在加载',
+        icon: 'loading',
+        duration: 1500
+      })
+      //获取当前用户的Id
+      this.userId = wx.getStorageSync("userId");
+      if(this.userId){
+        // this.foodGetOrderList();
+        // this.getOrderList();
+      }
+    }
+  }
+</script>
